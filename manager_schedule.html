@@ -34,30 +34,6 @@
             </div>
         </div>
     </nav>
-
-    <script>
-            if (window.XMLHttpRequest) {
-                // code for IE7+, Firefox, Chrome, Opera, Safari
-                xmlhttp = new XMLHttpRequest();
-            } else {
-                // code for IE6, IE5
-                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-            }
-            xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("txtHint").innerHTML = this.responseText;
-        }
-    };
-            xmlhttp.open("GET","survey.php",true);
-            xmlhttp.send();
-        </script>
-
-
-
-
-
-
-
     <div class="float-left pt-4" id="ta_pref">
         <table class="table table-striped table-bordered justify-content-center">
             <thead>
@@ -70,8 +46,7 @@
                     <th>THURS</th>
                 </tr>
             </thead>
-            <tbody>
-                <div id="txtHint"></div>
+            <tbody id="ta_table">                
             </tbody>
         </table>
     </div>
@@ -98,5 +73,6 @@
                 style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
     </div>
 </body>
-
+ 
+<script src="load_tables.js"></script>
 </html>
