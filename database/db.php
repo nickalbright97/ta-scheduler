@@ -1,8 +1,8 @@
 <?php
     $host = "127.0.0.1"; //or localhost for some reason localhost didn't work for me?!
-    $database = "ta_manager";
-    $user = "ta_manager_app";
-    $password = "s3kuDoG";
+    $database = "ta_scheduler";
+    $user = "ta_scheduler_app";
+    $password = "$3kuDoG";
     $port = "3306";  //this should probably be 3306 (mysql default) for most of you
 
     $connection = new mysqli($host, $user, $password, $database, $port);
@@ -14,7 +14,7 @@
         global $connection;
         date_default_timezone_set('America/New_York');
         $today = date(DATE_RSS);
-        $questionsTodayQuery = "select * from questions where asked > curdate()";
+        $questionsTodayQuery = "select * from feedback";
         if ($connection->connect_errno) {
             printf("Connect failed: %s\n", $connection->connect_error);
             exit();
