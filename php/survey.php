@@ -31,10 +31,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="home.html">Home <span
+                <a class="nav-item nav-link active" href="../home.html">Home <span
                         class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="signin.html">Sign in</a>
-                <a class="nav-item nav-link" href="feedback.html">Feedback</a>
+                <a class="nav-item nav-link" href="../signin.html">Sign in</a>
+                <a class="nav-item nav-link" href="../feedback.html">Feedback</a>
             </div>
         </div>
     </nav>
