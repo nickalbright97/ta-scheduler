@@ -42,11 +42,9 @@
 <?php
 
     echo'<p>';
-    if(isset($_POST['submit'])) {
-        echo 'course name:  ' . $_POST['courseCodeInput'] . '<br>';
-        echo 'Professor: '.$_POST['professorNameInput']  . '<br>';
-        echo 'Date: ' . $_POST['date']  . '<br>';
-        echo 'Feedback:' . $_POST['feedbackTextArea']  . '<br>';
+    if(isset($_POST['signin'])) {
+        echo 'Username ' . $_POST['inputUsername'] . '<br>';
+        echo 'Password'.$_POST['inputPassword']  . '<br>';
     }
     echo '</p>';
 
