@@ -6,6 +6,8 @@
  * ta_scheduler seed
 */
 
+USE ta_scheduler;
+
 INSERT INTO `feedback` VALUES (1,'irure dolor in reprehenderit in voluptate velit esse cillum dol','consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu','ex ea commodo consequat. Duis aute irure do','2019-11-07 00:00:00');
 INSERT INTO `feedback` VALUES (2,'tempo','adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna','eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mi','2019-11-08 00:00:00');
 INSERT INTO `feedback` VALUES (3,'aliqua. Ut enim ad minim ve','nisi ','proident','2019-11-09 00:00:00');
