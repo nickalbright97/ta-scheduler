@@ -16,7 +16,7 @@ DROP USER IF EXISTS 'ta_scheduler_app' @'localhost';
 CREATE USER 'ta_scheduler_app' @'localhost' IDENTIFIED BY '$3kuDoG';
 
 GRANT ALL PRIVILEGES ON
-ta_manager.* TO 'ta_manager_app' @'localhost';
+ta_manager.* TO 'ta_scheduler_app' @'localhost';
 
 /*Table structure for table `feedback`*/
 DROP TABLE IF EXISTS `feedback`;
