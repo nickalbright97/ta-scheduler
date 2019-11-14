@@ -29,6 +29,24 @@
         $stmt->bind_param("s", $date);
         $stmt->execute();
         return $stmt->get_result();
-
     }
+    
+    function get_courses() {
+        global $connection;
+        $queryStr = "SELECT code FROM `feedback`";
+        $stmt = $connection->prepare($queryStr);
+        $stmt->execute();
+        return $stmt->get_result();
+    }
+
+        
+    function get_professors() {
+        global $connection;
+        $queryStr = "SELECT professor FROM `feedback`";
+        $stmt = $connection->prepare($queryStr);
+        $stmt->execute();
+        return $stmt->get_result();
+    }
+    
+
 ?>
