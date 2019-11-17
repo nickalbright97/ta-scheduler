@@ -1,46 +1,27 @@
 <?php
-    //load in from database later
-    $row = ["name" =>"Will",
-        "Sunday" => "3-7pm",
-        "Monday" => "5-8pm",
-        "Tuesday" => "NA",
-        "Wednesday" => "8-10pm",
-        "Thursday" => "6-7pm",
-    ];
+    include("../database/db.php");
+    $data = manager_prefs();
 
-    $row2 = ["name" =>"Bill",
-    "Sunday" => "6-8pm",
-    "Monday" => "NA",
-    "Tuesday" => "4-8pm",
-    "Wednesday" => "8-11pm",
-    "Thursday" => "8am-7pm",
-    ];
-
-    $arr = [$row, $row2];
-
-    foreach ($arr as $ro) {
+    while($resp = $data->fetch_assoc()) {
         echo "<tr>";
         echo "<td>";
-        echo $ro['name'];
+        echo $resp['name'];
         echo "</td>";
         echo "<td>";
-        echo $ro['Sunday'];
+        echo $resp['sunday_start'] . " - " . $resp['sunday_end'];
         echo "</td>";
         echo "<td>";
-        echo $ro['Monday'];
+        echo $resp['monday_start'] . " - " . $resp['monday_end'];
         echo "</td>";
         echo "<td>";
-        echo $ro['Tuesday'];
+        echo $resp['tuesday_start'] . " - " . $resp['tuesday_end'];
         echo "</td>";
         echo "<td>";
-        echo $ro['Wednesday'];
+        echo $resp['wednesday_start'] . " - " . $resp['wednesday_end'];
         echo "</td>";
         echo "<td>";
-        echo $ro['Thursday'];
+        echo $resp['thursday_start'] . " - " . $resp['thursday_end'];
         echo "</td>";
         echo "</tr>";
     }
-
-
-    
 ?>

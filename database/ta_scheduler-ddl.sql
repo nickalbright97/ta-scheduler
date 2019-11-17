@@ -17,6 +17,7 @@ CREATE USER 'ta_scheduler_app'@'localhost' IDENTIFIED BY '$3kuDoG';
 
 GRANT ALL PRIVILEGES ON ta_scheduler.* TO 'ta_scheduler_app' @'localhost';
 
+
 /*Table structure for table `feedback`*/
 DROP TABLE IF EXISTS `feedback`;
 
@@ -38,6 +39,31 @@ CREATE TABLE
 	`password` VARCHAR(100) NOT NULL,
 	`role` VARCHAR(100) DEFAULT NULL,
 	PRIMARY KEY (`id`) );
+
+
+
+
+
+/*Table strucure for table preference table*/
+DROP TABLE IF EXISTS `preferences`;
+
+CREATE TABLE
+	`preferences` ( `id` INT(11) NOT NULL AUTO_INCREMENT,
+		`person_id` INT(11) NOT NULL,
+		`sunday_start` TIME(0),
+		`sunday_end` TIME(0),
+		`monday_start` TIME(0),
+		`monday_end` TIME(0),
+		`tuesday_start` TIME(0),
+		`tuesday_end` TIME(0),
+		`wednesday_start` TIME(0),
+		`wednesday_end` TIME(0),
+		`thursday_start` TIME(0),
+		`thursday_end` TIME(0), 
+		PRIMARY KEY (`id`),
+		KEY `preference_fk` (`person_id`),
+		CONSTRAINT `preference_fk` FOREIGN KEY (`person_id`) REFERENCES `person` (`id`) 
+	);
 
 /*Table structure for table `shift`*/
 DROP TABLE IF EXISTS `shift`;
