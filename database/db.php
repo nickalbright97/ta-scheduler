@@ -10,6 +10,15 @@
 			echo "Failed to connect to MySQL: (" . $connection->connect_errno . ") " . $connection->connect_error;
     }
 
+    function insert_feedback($class, $prof, $date, $text) {
+        global $connection;
+        $queryStr = "INSERT INTO `feedback`(code, professor, text, datetime) VALUES (?, ?, ?, ?)";
+        $stmt = $connection->prepare($queryStr);
+        $stmt->bind_param("ssss", $class, $prof, $text, $date);
+        $stmt->execute();
+        return $stmt->error;
+    }
+
     function manager_prefs() {
         global $connection;
         $queryStr = "SELECT  `person`.name, sunday_start, sunday_end, monday_start, monday_end, tuesday_start, tuesday_end, wednesday_start, wednesday_start, wednesday_end, thursday_start, thursday_end FROM `preferences`
@@ -20,16 +29,21 @@
 
     function survey_resp_today() {
         global $connection;
-        $queryStr = "SELECT code, professor, text FROM `feedback` WHERE datetime = CURRENT_DATE()";
+        $queryStr = "SELECT code, professor, text FROM `feedback` WHERE datetime >= CURRENT_DATE() AND datetime <= CURRENT_DATE() + 1";
         $data = $connection->query($queryStr);
         return $data;
     }
 
     function survey_resp_date($date) {
         global $connection;
-        $queryStr = "SELECT code, professor, text FROM `feedback` WHERE datetime = (?)";
+        //must change to do math
+        $date2 = DateTime::createFromFormat('Y-m-d', $date);
+        date_add($date2, date_interval_create_from_date_string('1 days'));
+        //change back
+        $date2 = $date2->format("Y-m-d");
+        $queryStr = "SELECT code, professor, text FROM `feedback` WHERE datetime >= (?) AND datetime <= (?)";
         $stmt = $connection->prepare($queryStr);
-        $stmt->bind_param("s", $date);
+        $stmt->bind_param("ss", $date, $date2);
         $stmt->execute();
         return $stmt->get_result();
     }

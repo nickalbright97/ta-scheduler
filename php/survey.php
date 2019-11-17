@@ -1,5 +1,5 @@
 <?php
-    //include db
+    include("../database/db.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,17 +38,12 @@
             </div>
         </div>
     </nav>
-    <p> Thankyou, we recieved : </p>
+    <p> Thankyou, we recieved your feedback.</p>
 <?php
-
-    echo'<p>';
     if(isset($_POST['submit'])) {
-        echo 'course name:  ' . $_POST['courseCodeInput'] . '<br>';
-        echo 'Professor: '.$_POST['professorNameInput']  . '<br>';
-        echo 'Date: ' . $_POST['date']  . '<br>';
-        echo 'Feedback:' . $_POST['feedbackTextArea']  . '<br>';
+        $resp = insert_feedback($_POST['courseCodeInput'], $_POST['professorNameInput'], str_replace("T", " ",$_POST['date']).":00", $_POST['feedbackTextArea']);
+        echo "<p>" . $resp . "</p>";
     }
-    echo '</p>';
 
 ?>
 
