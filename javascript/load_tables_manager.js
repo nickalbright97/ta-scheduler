@@ -33,8 +33,7 @@ function load_survey_resp_tables() {
 }
 
 
-load_ta_table();
-load_survey_resp_tables();
+
 
 
 function load_survey_resp_tables_date($event) {
