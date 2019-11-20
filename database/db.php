@@ -10,6 +10,21 @@
 			echo "Failed to connect to MySQL: (" . $connection->connect_errno . ") " . $connection->connect_error;
     }
 
+    function insert_queue_data($ques) {
+        global $connection;
+        $queryStr = "UPDATE `queue` SET `queue` = ?";
+        $stmt = $connection->prepare($queryStr);
+        $stmt->bind_param("s", $ques);
+        $stmt->execute();
+    }
+
+    function get_queue_data() {
+        global $connection;
+        $queryStr = "SELECT * FROM `queue`";
+        $data = $connection->query($queryStr);
+        return $data;
+    }
+
     function insert_feedback($class, $prof, $date, $text) {
         global $connection;
         $queryStr = "INSERT INTO `feedback`(code, professor, text, datetime) VALUES (?, ?, ?, ?)";

@@ -17,6 +17,11 @@ CREATE USER 'ta_scheduler_app'@'localhost' IDENTIFIED BY '$3kuDoG';
 
 GRANT ALL PRIVILEGES ON ta_scheduler.* TO 'ta_scheduler_app' @'localhost';
 
+/*Table for queue*/
+DROP TABLE IF EXISTS `QUEUE`;
+CREATE TABLE `queue` (
+	`queue` VARCHAR(100)
+	);
 
 /*Table structure for table `feedback`*/
 DROP TABLE IF EXISTS `feedback`;

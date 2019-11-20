@@ -8,6 +8,8 @@
 
 USE ta_scheduler;
 
+INSERT INTO `queue` VALUES (0);
+
 INSERT INTO `feedback` VALUES (51,'159','Bowers','eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mi','2019-11-08 00:00:00');
 INSERT INTO `feedback` VALUES (52,'159','Bowers','eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mi','2019-11-08 00:00:00');
 INSERT INTO `feedback` VALUES (53,'159','Sprague','proident','2019-11-09 00:00:00');
