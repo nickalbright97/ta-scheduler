@@ -63,5 +63,5 @@ function close_hours() {
 }
 
 //check_questions();
-
+check_hours();
 set_interval(check_hours, 30 * 60 * 1000);
