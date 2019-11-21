@@ -65,6 +65,7 @@ CREATE TABLE
 		`wednesday_end` TIME(0),
 		`thursday_start` TIME(0),
 		`thursday_end` TIME(0), 
+		`late_shifts` BOOLEAN,
 		PRIMARY KEY (`id`),
 		KEY `preference_fk` (`person_id`),
 		CONSTRAINT `preference_fk` FOREIGN KEY (`person_id`) REFERENCES `person` (`id`) 

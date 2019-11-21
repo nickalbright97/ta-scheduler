@@ -94,12 +94,12 @@ INSERT INTO `person` VALUES (29,'dolore eu fugiat nulla pariatur. Excepteur sint
 INSERT INTO `person` VALUES (30,'cupidatat non proident, sunt in cu','dolore eu fugiat nulla pariatu','occaeca','eiusmod tempor incididun');
 
 
-INSERT INTO `preferences` VALUES (1,20, '08:00:00', '17:00:00', '12:00:00', '15:00:00', '13:00:00', '23:00:00', '11:00:00', '12:00:00', '08:00:00','13:00:00');
-INSERT INTO `preferences` VALUES (2,15, '08:00:00','23:00:00','20:00:00','23:00:00', '','','','','','');
-INSERT INTO `preferences` VALUES (3,1, '11:00:00','13:00:00', '14:00:00', '18:00:00' ,'17:30:00','23:00:00', '', '', '', '');
-INSERT INTO `preferences` VALUES (4,13, '08:25:00', '16:00:00', '21:00:00', '23:30:00', '','','','','','');
-INSERT INTO `preferences` VALUES (5,19, '10:00:00', '13:30:00', '','','','','','','','');
-INSERT INTO `preferences` VALUES (6,11, '14:00:00' , '17:00:00','','','','','','','','');
+INSERT INTO `preferences` VALUES (1,20, '08:00:00', '17:00:00', '12:00:00', '15:00:00', '13:00:00', '23:00:00', '11:00:00', '12:00:00', '08:00:00','13:00:00', true);
+INSERT INTO `preferences` VALUES (2,15, '08:00:00','23:00:00','20:00:00','23:00:00', '','','','','','', false);
+INSERT INTO `preferences` VALUES (3,1, '11:00:00','13:00:00', '14:00:00', '18:00:00' ,'17:30:00','23:00:00', '', '', '', '', true);
+INSERT INTO `preferences` VALUES (4,13, '08:25:00', '16:00:00', '21:00:00', '23:30:00', '','','','','','', false);
+INSERT INTO `preferences` VALUES (5,19, '10:00:00', '13:30:00', '','','','','','','','', false);
+INSERT INTO `preferences` VALUES (6,11, '14:00:00' , '17:00:00','','','','','','','','', true);
 
 
 INSERT INTO `shift` VALUES (1,27,'1987-02-18 18:15:50','2011-04-26 18:49:40');

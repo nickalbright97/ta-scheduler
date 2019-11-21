@@ -22,6 +22,13 @@
         echo "<td>";
         echo $resp['thursday_start'] . " - " . $resp['thursday_end'];
         echo "</td>";
+        echo "<td>";
+        if($resp['late_shifts'] == 1) {
+            echo "True";
+        } else {
+            echo "False";
+        }
+        echo "</td>";
         echo "</tr>";
     }
 ?>
