@@ -36,7 +36,7 @@
 
     function manager_prefs() {
         global $connection;
-        $queryStr = "SELECT  `person`.name, sunday_start, sunday_end, monday_start, monday_end, tuesday_start, tuesday_end, wednesday_start, wednesday_start, wednesday_end, thursday_start, thursday_end FROM `preferences`
+        $queryStr = "SELECT  `person`.name, sunday_start, sunday_end, monday_start, monday_end, tuesday_start, tuesday_end, wednesday_start, wednesday_start, wednesday_end, thursday_start, thursday_end, late_shifts FROM `preferences`
         JOIN `person` ON person_id = `person`.id";
         $data = $connection->query($queryStr);
         return $data;

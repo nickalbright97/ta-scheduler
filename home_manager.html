@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Feedback</title>
+    <title>TA Schedule</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -18,7 +18,6 @@
         crossorigin="anonymous"></script>
 </head>
 
-
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="https://www.jmu.edu/cs/" target="_blank">
@@ -30,35 +29,28 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="home.html">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="/oauth/api/v1/auth/callback.php">Sign in</a>
-                <a class="nav-item nav-link" href="feedback.html">Feedback</a>
+                <a class="nav-item nav-link active" href="home_manager.html">Home <span
+                        class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="signin.html">Sign in</a>
+                <a class="nav-item nav-link" href="manager_schedule.html">Schedule</a>
+                <a class="nav-item nav-link" href="manager_analytics.html">Feedback Analytics</a>
             </div>
         </div>
     </nav>
     
-    <div class="container col-sm-6 offset-sm-3 text-center" style="margin-top:25px">
-        <form action="php/survey.php" method="post">
-            <div class="form-group">
-                <input type="text" class="form-control" name="courseCodeInput" id="courseCodeInput"
-                    placeholder="Course code (ex. 'CS 149')">
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" name="professorNameInput" id="professorNameInput"
-                    placeholder="Professor">
-            </div>
-            <div class="form-group">
-                <input type="datetime-local" class="form-control" name="date" id="date" placeholder="Date and Time"
-                    min="2019-10-05T16:15">
-            </div>
-            <div class="form-group">
-                <textarea class="form-control" name="feedbackTextArea" id="feedbackTextArea" rows="6"
-                    placeholder="I received help with..."></textarea>
-            </div>
-            <button type="submit" value="submit" name="submit" class="btn btn-primary">Submit</button>
-        </form>
+    <div class="pt-4 text-center">
+        <p id="workin">The Ta's are : IN</p>
+        <p id="busy"></p>
+        <p>Don't forget to fillout the feedback survey!</p>
+
     </div>
-
-
-
+    <div class="pt-4 text-center">
+        <iframe
+            src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FNew_York&amp;src=ZjBkOGdqZHNmYWY3dGp2Ymg0aWhucW92ajBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%233F51B5&amp;showTitle=1"
+            style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    </div>
 </body>
+
+<script src="javascript/home_info.js"></script>
+
+</html>
