@@ -79,6 +79,22 @@
         $stmt->execute();
         return $stmt->get_result();
     }
+
+    function get_incoming_requests() {
+        global $connection;
+        $queryStr = "SELECT * FROM `shift_request`";
+        $stmt = $connection->prepare($queryStr);
+        $stmt->execute();
+        return $stmt->get_result();
+    }
+
+    function get_name($id) {
+        global $connection;
+        $queryStr = "SELECT name FROM `person` where id = $id";
+        $stmt = $connection->prepare($queryStr);
+        $stmt->execute();
+        return $stmt->get_result();
+    }
     
 
 ?>
