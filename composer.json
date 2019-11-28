@@ -1,0 +1,18 @@
+{
+    "name": "tgm/php-oauth-canvas",
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/JMU-CS/oauth2-canvaslms"
+        }
+    ],
+    "require": {
+        "jmu-cs/oauth2-canvaslms": "dev-master"
+    },
+    "authors": [
+        {
+            "name": "Michael Stewart",
+            "email": "stewarmc@jmu.edu"
+        }
+    ]
+}
