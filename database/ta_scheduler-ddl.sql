@@ -35,11 +35,10 @@ CREATE TABLE
 
 /*Table structure for table `person`*/
 DROP TABLE IF EXISTS `person`;
+
 CREATE TABLE
 	`person` ( `id` INT(11) NOT NULL AUTO_INCREMENT,
-	`name` VARCHAR(100) NOT NULL,
-	`email` VARCHAR(100) NOT NULL,
-	`password` VARCHAR(100) NOT NULL,
+	`username` VARCHAR(100) NOT NULL,
 	`role` VARCHAR(100) DEFAULT NULL,
 	PRIMARY KEY (`id`) );
 
