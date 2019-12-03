@@ -9,7 +9,7 @@
     if ($connection->connect_errno) {
 			echo "Failed to connect to MySQL: (" . $connection->connect_errno . ") " . $connection->connect_error;
     }
-    session_start();
+
     function insert_queue_data($ques) {
         global $connection;
         $queryStr = "UPDATE `queue` SET `queue` = ?";
@@ -119,6 +119,7 @@
     }
 
     function claim_shift($shiftID) {
+        session_start();
         global $connection;
         $id = $_SESSION['id'];
         $queryStr = "UPDATE shift_request SET `picker` = $id where id = ?";
