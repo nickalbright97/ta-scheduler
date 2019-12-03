@@ -40,7 +40,7 @@ function check_questions() {
                 document.getElementById("busy").innerHTML = "There are about " + this.responseText + " questions on the board";
             }
         };  
-        xmlhttp.open("GET","http://127.0.0.1:8000/php/question.php", true);
+        xmlhttp.open("GET","php/question.php", true);
         xmlhttp.send();
 
 }
@@ -58,7 +58,7 @@ function close_hours() {
                 console.log(this.responseText);
             }
         };  
-        xmlhttp.open("GET","http://127.0.0.1:8000/php/question.php?questions=0", true);
+        xmlhttp.open("GET","php/question.php?questions=0", true);
         xmlhttp.send();;
 }
 
