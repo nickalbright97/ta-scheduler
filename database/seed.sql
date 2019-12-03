@@ -62,36 +62,36 @@ INSERT INTO `feedback` VALUES (49,'sed do eiusmod tempor incididunt ','um.Lorem 
 INSERT INTO `feedback` VALUES (50,'tempor incididunt ut labore et dolore magna aliqua','nisi ut aliquip ex ea co','Duis aute irure dolor in repre','2019-12-26 00:00:00');
 
 
-INSERT INTO `person` VALUES (1,'llamasjw','Wesley Llamas','manager');
-INSERT INTO `person` VALUES (2,'krzyzkwm','Will K','ta_lead');
-INSERT INTO `person` VALUES (3,'albrigne','Nick Albright','ta_reg');
-INSERT INTO `person` VALUES (4,'mollit anim id est laborum.Lorem ip','dolor in reprehenderit in voluptate velit esse cillum do','in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excep');
-INSERT INTO `person` VALUES (5,'nisi ut aliquip ex ea commod','in voluptate velit esse cillum ','amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ');
-INSERT INTO `person` VALUES (6,'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugia','deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet,','irure dolor in reprehenderit in voluptate velit esse cillum d');
-INSERT INTO `person` VALUES (7,'anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tem','sint occaecat cupidatat non proident, sunt in cul','ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commod');
-INSERT INTO `person` VALUES (8,'dolor in r','Excepteur sint','in voluptate velit esse cillum dolore eu f');
-INSERT INTO `person` VALUES (9,'ea commodo consequat. Duis aute irure dolor in','nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit','consectetur adipiscing elit, sed do eiusmod tempor incididunt ut l');
-INSERT INTO `person` VALUES (10,'incididunt ut labore et dolore magna aliqua. Ut enim ','deserunt mollit anim id est laborum.Lorem ipsum dolor si','quis nostrud exercitation ulla');
-INSERT INTO `person` VALUES (11,'sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, conse','deserunt mollit anim id est laborum.Lorem ipsum dolor sit ame','in voluptate velit esse cillum dolore');
-INSERT INTO `person` VALUES (12,'cu','Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore e','Ut enim ad minim veniam, quis nostrud exercitation ullamco');
-INSERT INTO `person` VALUES (13,'elit, sed do eiusmod tempor incididunt ut labore et ','dolore eu fugiat nulla pariat','ullamco laboris nisi ut aliquip ex ea com');
-INSERT INTO `person` VALUES (14,'ut labore et dolore magna aliqua','do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis','sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit a');
-INSERT INTO `person` VALUES (15,'mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur ad','aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla paria','dolore eu fugiat nulla pariatur. Excepte');
-INSERT INTO `person` VALUES (16,'culpa ', 'ullamco laboris nisi ut aliquip ex ea ','eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt i');
-INSERT INTO `person` VALUES (17,'in vol','non proident, sunt in culpa qui officia deserunt mollit anim id est la','irure dolor in reprehenderit');
-INSERT INTO `person` VALUES (18,'ullamco laboris nis','Duis aut','aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut');
-INSERT INTO `person` VALUES (19,'dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt u','magna a','ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidi');
-INSERT INTO `person` VALUES (20,'dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa q','dolor sit','sunt in culpa qui officia deserunt mollit anim id est l');
-INSERT INTO `person` VALUES (21,'aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur','d','Ut enim ad minim veniam, quis nostrud exercitation ullamco labor');
-INSERT INTO `person` VALUES (22,'occaecat cupidatat non proident, sunt i','proident, sunt in culpa qui officia deserunt mollit anim id est labo','ut labore et dolore magna aliqua. Ut enim ad mi');
-INSERT INTO `person` VALUES (23,'ex','non proident, sunt in culpa qui officia deserunt m','est laborum.Lorem');
-INSERT INTO `person` VALUES (24,'u','.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tem','mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do ei');
-INSERT INTO `person` VALUES (25,'dolor in reprehenderit in voluptate velit esse cillu','velit esse cillum dolore eu fugiat nul','dolor sit amet, consectetur adipiscing eli');
-INSERT INTO `person` VALUES (26,'dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariat','sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor si','irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. E');
-INSERT INTO `person` VALUES (27,'laboris nisi ut aliquip ex ea commodo consequat. Duis a','nulla pariatur. Excepteur sint occaecat cupidatat n','ullamco laboris nisi ');
-INSERT INTO `person` VALUES (28,'Ut enim ad minim veniam, quis nostrud exercitation ullamco lab','Duis aute irure dolor in reprehenderit in voluptate velit','ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehe');
-INSERT INTO `person` VALUES (29,'reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint oc','do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, q','velit esse ci');
-INSERT INTO `person` VALUES (30,'dolore eu fugiat nulla pariatu','occaeca','eiusmod tempor incididun');
+INSERT INTO `person` VALUES (1, 'llamasjw','Wesley Llamas','manager');
+INSERT INTO `person` VALUES (2, 'krzyzkwm','Will K','ta_lead');
+INSERT INTO `person` VALUES (3, 'albrigne','Nick Albright','ta_reg');
+INSERT INTO `person` VALUES (4, 'walla3cj','Connor Wallace','manager');
+INSERT INTO `person` VALUES (5, 'elit','ut lab','ta_reg');
+INSERT INTO `person` VALUES (6, 'des','sunt in','ta_reg');
+INSERT INTO `person` VALUES (7, 'exerci','magna a','ta_reg');
+INSERT INTO `person` VALUES (8, 'adipis','Ut enim ','ta_reg');
+INSERT INTO `person` VALUES (9, 'nisi ut al','repre','ta_reg');
+INSERT INTO `person` VALUES (10, 'l','laboris ni','ta_reg');
+INSERT INTO `person` VALUES (11, 'o','n','ta_reg');
+INSERT INTO `person` VALUES (12, 'incidid','ul','ta_reg');
+INSERT INTO `person` VALUES (13, 'utenima','incididu','ta_reg');
+INSERT INTO `person` VALUES (14, 'do','cons','ta_reg');
+INSERT INTO `person` VALUES (15, 'utenim ','ex','ta_reg');
+INSERT INTO `person` VALUES (16, 'laboris','eu','ta_reg');
+INSERT INTO `person` VALUES (17, 'du','ullamc','ta_reg');
+INSERT INTO `person` VALUES (18, 'adipisc','ipsum dol','ta_reg');
+INSERT INTO `person` VALUES (19, 're','co','ta_reg');
+INSERT INTO `person` VALUES (20, 'utaliqui','sint o','ta_reg');
+INSERT INTO `person` VALUES (21, 'utali','velit esse','ta_reg');
+INSERT INTO `person` VALUES (22, 'consect','velit ','ta_reg');
+INSERT INTO `person` VALUES (23, 'sun','e','ta_reg')
+INSERT INTO `person` VALUES (24, 'eaco','par','ta_reg')
+INSERT INTO `person` VALUES (25, 'adipi','esse cil','ta_reg')
+INSERT INTO `person` VALUES (26, 'utenim','ut labo','ta_reg')
+INSERT INTO `person` VALUES (27, 'oru','aliqua.','ta_reg')
+INSERT INTO `person` VALUES (28, 'utlabo','dolo','ta_reg')
+INSERT INTO `person` VALUES (29, 'eiu','ullam','ta_reg')
+INSERT INTO `person` VALUES (30, 'adip','o','ta_reg')
 
 
 INSERT INTO `preferences` VALUES (1,20, '08:00:00', '17:00:00', '12:00:00', '15:00:00', '13:00:00', '23:00:00', '11:00:00', '12:00:00', '08:00:00','13:00:00', true);
