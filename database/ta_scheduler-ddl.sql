@@ -80,7 +80,7 @@ DROP TABLE IF EXISTS `shift_request`;
 CREATE TABLE
 	`shift_request` ( `id` INT(11) NOT NULL AUTO_INCREMENT,
 	`dropper` INT(11) NOT NULL,
-	`picker` INT(11) NOT NULL,
+	`picker` INT(11),
 	`datetime` DATETIME NOT NULL,
 	`comments` VARCHAR(100) DEFAULT NULL,
 	`approved` BOOLEAN,
