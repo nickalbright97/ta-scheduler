@@ -66,7 +66,7 @@ function ask_how_busy() {
             }
         };  
         console.log(ques);
-        xmlhttp.open("GET","http://127.0.0.1:8000/php/question.php?questions=" + ques, true);
+        xmlhttp.open("GET","php/question.php?questions=" + ques, true);
         xmlhttp.send();;
     }
 }
