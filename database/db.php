@@ -1,15 +1,14 @@
+
 <?php
     $host = "localhost"; //or localhost for some reason localhost didn't work for me?!
     $database = "ta_scheduler";
     $user = "ta_scheduler_app";
     $password = "$3kuDoG";
     $port = "3306";  //this should probably be 3306 (mysql default) for most of you
-
     $connection = new mysqli($host, $user, $password, $database, $port);
     if ($connection->connect_errno) {
 			echo "Failed to connect to MySQL: (" . $connection->connect_errno . ") " . $connection->connect_error;
     }
-
     function insert_queue_data($ques) {
         global $connection;
         $queryStr = "UPDATE `queue` SET `queue` = ?";
@@ -17,14 +16,12 @@
         $stmt->bind_param("s", $ques);
         $stmt->execute();
     }
-
     function get_queue_data() {
         global $connection;
         $queryStr = "SELECT * FROM `queue`";
         $data = $connection->query($queryStr);
         return $data;
     }
-
     function insert_feedback($class, $prof, $date, $text) {
         global $connection;
         $queryStr = "INSERT INTO `feedback`(code, professor, text, datetime) VALUES (?, ?, ?, ?)";
@@ -33,7 +30,6 @@
         $stmt->execute();
         return $stmt->error;
     }
-
     function manager_prefs() {
         global $connection;
         $queryStr = "SELECT  `person`.name, sunday_start, sunday_end, monday_start, monday_end, tuesday_start, tuesday_end, wednesday_start, wednesday_start, wednesday_end, thursday_start, thursday_end, late_shifts FROM `preferences`
@@ -41,14 +37,12 @@
         $data = $connection->query($queryStr);
         return $data;
     }
-
     function survey_resp_today() {
         global $connection;
         $queryStr = "SELECT code, professor, text FROM `feedback` WHERE datetime >= CURRENT_DATE() AND datetime <= CURRENT_DATE() + 1";
         $data = $connection->query($queryStr);
         return $data;
     }
-
     function survey_resp_date($date) {
         global $connection;
         //must change to do math
@@ -70,7 +64,6 @@
         $stmt->execute();
         return $stmt->get_result();
     }
-
         
     function get_professors() {
         global $connection;
@@ -79,7 +72,6 @@
         $stmt->execute();
         return $stmt->get_result();
     }
-
     function get_incoming_requests() {
         global $connection;
         $queryStr = "SELECT * FROM `shift_request`";
@@ -87,7 +79,6 @@
         $stmt->execute();
         return $stmt->get_result();
     }
-
     function get_name($id) {
         global $connection;
         $queryStr = "SELECT name FROM `person` where id = $id";
@@ -95,4 +86,15 @@
         $stmt->execute();
         return $stmt->get_result();
     }
+
+    function get_role($id) {
+        global $connection;
+        $queryStr = "SELECT role FROM `person` where `username` = ?";
+        $stmt = $connection->prepare($queryStr);
+        $stmt->bind_param("s", $id);
+        $stmt->execute();
+        return $stmt->get_result();
+    }
+    
+
 ?>
