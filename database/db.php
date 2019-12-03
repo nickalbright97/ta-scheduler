@@ -9,6 +9,7 @@
     if ($connection->connect_errno) {
 			echo "Failed to connect to MySQL: (" . $connection->connect_errno . ") " . $connection->connect_error;
     }
+    session_start();
     function insert_queue_data($ques) {
         global $connection;
         $queryStr = "UPDATE `queue` SET `queue` = ?";
@@ -75,7 +76,7 @@
 
     function get_incoming_requests() {
         global $connection;
-        $queryStr = "SELECT * FROM `shift_request`";
+        $queryStr = "SELECT * FROM `shift_request` where approved = false  AND picker IS NULL";
         $stmt = $connection->prepare($queryStr);
         $stmt->execute();
         return $stmt->get_result();
@@ -83,7 +84,7 @@
 
     function get_outgoing_requests($id) {
         global $connection;
-        $queryStr = "SELECT * FROM `shift_request` where dropper = ?";
+        $queryStr = "SELECT * FROM `shift_request` where dropper = ? AND approved = false";
         $stmt = $connection->prepare($queryStr);
         $stmt->bind_param("i", $id);
         $stmt->execute();
@@ -113,6 +114,16 @@
         $queryStr = "SELECT id FROM `person` where `username` = ?";
         $stmt = $connection->prepare($queryStr);
         $stmt->bind_param("s", $username);
+        $stmt->execute();
+        return $stmt->get_result();
+    }
+
+    function claim_shift($shiftID) {
+        global $connection;
+        $id = $_SESSION['id'];
+        $queryStr = "UPDATE shift_request SET `picker` = $id where id = ?";
+        $stmt = $connection->prepare($queryStr);
+        $stmt->bind_param("s", $shiftID);
         $stmt->execute();
         return $stmt->get_result();
     }

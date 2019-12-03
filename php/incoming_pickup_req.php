@@ -32,6 +32,14 @@ if ($requests->num_rows > 0) {
         echo "<td>";
         echo $date_time->format('h:i:s A');
         echo "</td>";
+        echo "<td>";
+        // Create button for shift pickup
+        $button = "<form action=\"/php/claim_shift.php\" method=\"post\"> 
+        <input type=\"submit\" name=\"shift\" value=\"Claim Shift ";
+        $button .= $row['id'];
+        $button .= "\"/>  </form>"; 
+        echo $button;
+        echo "</td>";
         echo "</tr>";
     }
 } else {
