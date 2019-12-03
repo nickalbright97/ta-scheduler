@@ -1,12 +1,14 @@
 <?php
     include("../database/db.php");
+    session_start();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Feedback</title>
+    <title>TA Schedule</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -21,7 +23,6 @@
         crossorigin="anonymous"></script>
 </head>
 
-
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="https://www.jmu.edu/cs/" target="_blank">
@@ -33,21 +34,29 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="../home.html">Home <span
-                        class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="../signin.html">Sign in</a>
-                <a class="nav-item nav-link" href="../feedback.html">Feedback</a>
+                <a class="nav-item nav-link" href="../ta_schedule.html">Home<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="/api/v1/auth/callback.php">Sign in</a>
+                <a class="nav-item nav-link" href="../ta_schedule.html">TA Schedule</a>
+                <a class="nav-item nav-link" href="../swap_request.html">Swap request</a>
+                <a class="nav-item nav-link active" href="../ta_preferences.html">Schedule Preferences</a>
             </div>
         </div>
     </nav>
-    <p> Thankyou, we recieved your feedback.</p>
+    <p> Thank You. Dont forget to turn in Paper Work to Mrs. Laycock.</p>
+<body>
+
 <?php
-    if(isset($_POST['submit'])) {
-        $resp = insert_feedback($_POST['courseCodeInput'], $_POST['professorNameInput'], str_replace("T", " ",$_POST['date']).":00", $_POST['feedbackTextArea']);
-        echo "<p>" . $resp . "</p>";
+
+if(isset($_POST['submit'])) {
+
+    $late = "";
+    if($_POST["late_shifts"] == "Yes") {
+        $late = "true";
+    } else {
+        $late = "false";
     }
 
+    insert_preferences($_POST["sun_s"], $_POST["sun_e"], $_POST["mon_s"], $_POST["mon_e"], $_POST["tues_s"], $_POST["tues_e"], $_POST["wed_s"], $_POST["wed_e"], $_POST["thur_s"], $_POST["thur_e"], $late);
+}
+
 ?>
-
-</body>
-

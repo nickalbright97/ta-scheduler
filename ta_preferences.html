@@ -38,50 +38,50 @@
         </div>
     </nav>
     <div class="container col-sm-6 offset-sm-3 text-center" style="margin-top:25px">
-        <form>
+        <form action="php/pref_survey.php" method="post">
             <div class="form-group">
                 <h5 style="text-align: left">Sunday</h3>
                     <label for="sunday_start">Start</label>
-                    <input type="time" class="form-control" id="sunday_start" placeholder="Start Time" min="13:00"
+                    <input type="time" class="form-control" id="sunday_start" name="sun_s" placeholder="Start Time" min="13:00"
                         max="23:00">
                     <label for="sunday_end">End</label>
-                    <input type="time" class="form-control" id="sunday_end" placeholder="End Time" min="13:00"
+                    <input type="time" class="form-control" id="sunday_end" name="sun_e" placeholder="End Time" min="13:00"
                         max="23:00">
             </div>
             <div class="form-group">
                 <h5 style="text-align: left">Monday</h3>
                     <label for="monday_start">Start</label>
-                    <input type="time" class="form-control" id="monday_start" placeholder="Start Time" min="08:00"
+                    <input type="time" class="form-control" id="monday_start" name="mon_s" placeholder="Start Time" min="08:00"
                         max="23:00">
                     <label for="monday_end">End</label>
-                    <input type="time" class="form-control" id="monday_end" placeholder="End Time" min="08:00"
+                    <input type="time" class="form-control" id="monday_end" name="mon_e" placeholder="End Time" min="08:00"
                         max="23:00">
             </div>
             <div class="form-group">
                 <h5 style="text-align: left">Tuesday</h3>
                     <label for="tuesday_start">Start</label>
-                    <input type="time" class="form-control" id="tuesday_start" placeholder="Start Time" min="08:00"
+                    <input type="time" class="form-control" id="tuesday_start" name="tues_s" placeholder="Start Time" min="08:00"
                         max="23:00">
                     <label for="tuesday_end">End</label>
-                    <input type="time" class="form-control" id="tuesday_end" placeholder="End Time" min="08:00"
+                    <input type="time" class="form-control" id="tuesday_end" name="tues_e" placeholder="End Time" min="08:00"
                         max="23:00">
             </div>
             <div class="form-group">
                 <h5 style="text-align: left">Wednesday</h3>
                     <label for="wednesday_start">Start</label>
-                    <input type="time" class="form-control" id="wednesday_start" placeholder="Start Time" min="08:00"
+                    <input type="time" class="form-control" id="wednesday_start" name="wed_s" placeholder="Start Time" min="08:00"
                         max="23:00">
                     <label for="wednesday_end">End</label>
-                    <input type="time" class="form-control" id="wednesday_end" placeholder="End Time" min="08:00"
+                    <input type="time" class="form-control" id="wednesday_end" name="wed_e" placeholder="End Time" min="08:00"
                         max="23:00">
             </div>
             <div class="form-group">
                 <h5 style="text-align: left">Thursday</h3>
                     <label for="thursday_start">Start</label>
-                    <input type="time" class="form-control" id="thursday_start" placeholder="Start Time" min="08:00"
+                    <input type="time" class="form-control" id="thursday_start" name="thur_s" placeholder="Start Time" min="08:00"
                         max="23:00">
                     <label for="thursday_end">End</label>
-                    <input type="time" class="form-control" id="thursday_end" placeholder="End Time" min="08:00"
+                    <input type="time" class="form-control" id="thursday_end" name="thur_e" placeholder="End Time" min="08:00"
                         max="23:00">
             </div>
             <div class="form-group">
@@ -92,7 +92,7 @@
                     <label for="no">No</label>
             </div>
 
-            <button type="submit" class="btn btn-primary">submit</button>
+            <button type="submit" class="btn btn-primary" name="submit">submit</button>
         </form>
     </div>
 
