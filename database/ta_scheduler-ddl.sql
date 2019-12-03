@@ -18,14 +18,13 @@ CREATE USER 'ta_scheduler_app'@'localhost' IDENTIFIED BY '$3kuDoG';
 GRANT ALL PRIVILEGES ON ta_scheduler.* TO 'ta_scheduler_app' @'localhost';
 
 /*Table for queue*/
-DROP TABLE IF EXISTS `QUEUE`;
+DROP TABLE IF EXISTS `queue`;
 CREATE TABLE `queue` (
 	`queue` VARCHAR(100)
 	);
 
 /*Table structure for table `feedback`*/
 DROP TABLE IF EXISTS `feedback`;
-
 CREATE TABLE
 	`feedback` ( `id` INT(11) NOT NULL AUTO_INCREMENT,
 	`code` VARCHAR(100) DEFAULT NULL,
@@ -36,7 +35,6 @@ CREATE TABLE
 
 /*Table structure for table `person`*/
 DROP TABLE IF EXISTS `person`;
-
 CREATE TABLE
 	`person` ( `id` INT(11) NOT NULL AUTO_INCREMENT,
 	`name` VARCHAR(100) NOT NULL,
@@ -45,13 +43,8 @@ CREATE TABLE
 	`role` VARCHAR(100) DEFAULT NULL,
 	PRIMARY KEY (`id`) );
 
-
-
-
-
 /*Table strucure for table preference table*/
 DROP TABLE IF EXISTS `preferences`;
-
 CREATE TABLE
 	`preferences` ( `id` INT(11) NOT NULL AUTO_INCREMENT,
 		`person_id` INT(11) NOT NULL,
@@ -73,7 +66,6 @@ CREATE TABLE
 
 /*Table structure for table `shift`*/
 DROP TABLE IF EXISTS `shift`;
-
 CREATE TABLE
 	`shift` ( `id` INT(11) NOT NULL AUTO_INCREMENT,
 	`owner` INT(11) NOT NULL,
@@ -85,7 +77,6 @@ CREATE TABLE
 
 /*Table structure for table `shift_request`*/
 DROP TABLE IF EXISTS `shift_request`;
-
 CREATE TABLE
 	`shift_request` ( `id` INT(11) NOT NULL AUTO_INCREMENT,
 	`dropper` INT(11) NOT NULL,
