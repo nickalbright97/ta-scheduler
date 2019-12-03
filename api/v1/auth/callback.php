@@ -41,8 +41,6 @@ if (!isset($_GET[CODE])) {
     /* do something with that token... (probably not just print to screen, but whatevs...) */
     // echo $token->getToken();
 
-    // Wesley's test
-
     $curl = curl_init();
     $profile = print_r_results($_SESSION["access_token"], $curl, '/users/self/profile');
     $role = "";
