@@ -148,7 +148,7 @@
         } else {
             $queryStr = "INSERT INTO `preferences` VALUES(Default,?,?,?,?,?,?,?,?,?,?,?,?)";
             $stmt = $connection->prepare($queryStr);
-            $stmt->bind_param("isssssssssss", $id, $sun_s, $sun_e, $mon_s, $mon_e, $tue_s, $tue_e, $wed_s, $wed_e, $thur_s, $thur_e, $late_shift);
+            $stmt->bind_param("issssssssssi", $id, $sun_s, $sun_e, $mon_s, $mon_e, $tue_s, $tue_e, $wed_s, $wed_e, $thur_s, $thur_e, $late_shift);
             $stmt->execute();
         }
 
@@ -159,7 +159,7 @@
         $id = $_SESSION['id'];
         $queryStr = "UPDATE `preferences` SET `sunday_start` = ?, `sunday_end`=?, `monday_start`=?, `monday_end`=?, `tuesday_start`=?, `tuesday_end`=?, `wednesday_start` = ?, `wednesday_end`=?, `thursday_start`=?, `thursday_end`=? , `late_shifts` = ? WHERE person_id = ?";
         $stmt = $connection->prepare($queryStr);
-        $stmt->bind_param("sssssssssssi", $sun_s, $sun_e, $mon_s, $mon_e, $tue_s, $tue_e, $wed_s, $wed_e, $thur_s, $thur_e, $late_shift, $id);
+        $stmt->bind_param("ssssssssssii", $sun_s, $sun_e, $mon_s, $mon_e, $tue_s, $tue_e, $wed_s, $wed_e, $thur_s, $thur_e, $late_shift, $id);
         $stmt->execute();
     }
 
