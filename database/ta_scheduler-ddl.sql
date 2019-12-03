@@ -39,6 +39,7 @@ DROP TABLE IF EXISTS `person`;
 CREATE TABLE
 	`person` ( `id` INT(11) NOT NULL AUTO_INCREMENT,
 	`username` VARCHAR(100) NOT NULL,
+	`name` VARCHAR(100) NOT NULL,
 	`role` VARCHAR(100) DEFAULT NULL,
 	PRIMARY KEY (`id`) );
 
@@ -82,6 +83,7 @@ CREATE TABLE
 	`picker` INT(11) NOT NULL,
 	`datetime` DATETIME NOT NULL,
 	`comments` VARCHAR(100) DEFAULT NULL,
+	`approved` BOOLEAN,
 	PRIMARY KEY (`id`),
 	KEY `dropper_fk` (`dropper`),
 	KEY `picker_fk` (`picker`),

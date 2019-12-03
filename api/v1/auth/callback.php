@@ -81,20 +81,20 @@ if (!isset($_GET[CODE])) {
                  // redirect to regular ta page
                  $_SESSION['role'] = 'ta_reg';
                  $_SESSION['username'] = $username;
-                header( "Location: ../../../../home_ta.html");
+                header( "Location: ../../../../ta_schedule.html");
                 break;
 
              case 'ta_lead':
                  // redirect to ta lead page
                  $_SESSION['role'] = 'ta_lead';
                  $_SESSION['username'] = $username;
-                header( "Location: ../../../../home_ta_lead.html");
+                header( "Location: ../../../../ta_schedule.html");
                 break; 
             case 'manager':
                  // redirect to manager page
                  $_SESSION['role'] = 'manager';
                  $_SESSION['username'] = $username;
-                header( "Location: ../../../../home_manager.html");
+                header( "Location: ../../../../manager_schedule.html");
                 break; 
             }
 
