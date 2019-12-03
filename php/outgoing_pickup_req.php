@@ -27,6 +27,8 @@ if ($requests->num_rows > 0) {
         echo "</td>";
         echo "</tr>";
     }
+} else {
+    echo "0 results";
 }
 
 ?>
