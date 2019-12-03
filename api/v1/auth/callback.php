@@ -1,6 +1,7 @@
 <?php
 
 include("../../../provider.php");
+include("../../../database/db.php");
 
 function print_r_results($accessToken, $curl, $endpoint)
 {
@@ -53,32 +54,41 @@ if (!isset($_GET[CODE])) {
         }
 
         // Assign username to role
+        /*
         if ( $username == "llamasjw" ) {
             $role = 'manager';
 
         } else {
             $role = 'student';
         }
+        */
 
+        $requests = get_role($username);
+        if ($requests->num_rows > 0) {
+            $row = $requests->fetch_assoc();
+            $role = $row['role'];
+        } else {
+            $role = 'student';
+        }
         switch ($role) {
             case 'student':
                 // redirect to student page
                 $_SESSION['role'] = 'student';
                 $_SESSION['username'] = $username;
-                header( "Location: http://www.google.com");
+                header( "Location: ../../../../home.html");
                 break;
             case 'ta_reg':
                  // redirect to regular ta page
-                 $_SESSION['role'] = 'ta';
+                 $_SESSION['role'] = 'ta_reg';
                  $_SESSION['username'] = $username;
-                header( "Location: http://www.google.com");
+                header( "Location: ../../../../home_ta.html");
                 break;
 
              case 'ta_lead':
                  // redirect to ta lead page
                  $_SESSION['role'] = 'ta_lead';
                  $_SESSION['username'] = $username;
-                header( "Location: http://www.google.com");
+                header( "Location: ../../../../home_ta_lead.html");
                 break; 
             case 'manager':
                  // redirect to manager page
