@@ -119,7 +119,6 @@
     }
 
     function claim_shift($shiftID) {
-        session_start();
         global $connection;
         $id = $_SESSION['id'];
         $queryStr = "UPDATE shift_request SET `picker` = $id where id = ?";
