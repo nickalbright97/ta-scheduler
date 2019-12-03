@@ -19,7 +19,6 @@ if ($requests->num_rows > 0) {
         $nameReq = get_name($row['dropper']);
         $nameRow = $nameReq->fetch_assoc();
         echo $nameRow['name'];
-  //      echo $row['dropper'];
         echo "</td>";
         echo "<td>";
         $date_time = new DateTime($row['datetime']);

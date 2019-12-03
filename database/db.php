@@ -72,6 +72,7 @@
         $stmt->execute();
         return $stmt->get_result();
     }
+
     function get_incoming_requests() {
         global $connection;
         $queryStr = "SELECT * FROM `shift_request`";
@@ -79,10 +80,21 @@
         $stmt->execute();
         return $stmt->get_result();
     }
+
+    function get_outgoing_requests($id) {
+        global $connection;
+        $queryStr = "SELECT * FROM `shift_request` where dropper = ?";
+        $stmt = $connection->prepare($queryStr);
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        return $stmt->get_result();
+    }
+
     function get_name($id) {
         global $connection;
-        $queryStr = "SELECT name FROM `person` where id = $id";
+        $queryStr = "SELECT name FROM `person` where id = ?";
         $stmt = $connection->prepare($queryStr);
+        $stmt->bind_param("s", $id);
         $stmt->execute();
         return $stmt->get_result();
     }
@@ -92,6 +104,15 @@
         $queryStr = "SELECT role FROM `person` where `username` = ?";
         $stmt = $connection->prepare($queryStr);
         $stmt->bind_param("s", $id);
+        $stmt->execute();
+        return $stmt->get_result();
+    }
+
+    function get_id($username) {
+        global $connection;
+        $queryStr = "SELECT id FROM `person` where `username` = ?";
+        $stmt = $connection->prepare($queryStr);
+        $stmt->bind_param("s", $username);
         $stmt->execute();
         return $stmt->get_result();
     }

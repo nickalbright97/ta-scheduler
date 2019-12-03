@@ -63,6 +63,12 @@ if (!isset($_GET[CODE])) {
         }
         */
 
+        $idReq = get_id($username);
+        if ($idReq->num_rows > 0) {
+            $row = $idReq->fetch_assoc();
+            $_SESSION['id'] = $row['id'];
+        }
+
         $requests = get_role($username);
         if ($requests->num_rows > 0) {
             $row = $requests->fetch_assoc();
