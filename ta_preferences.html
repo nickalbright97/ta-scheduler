@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>TA Schedule</title>
+    <title>TA Schedule Preferences</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -37,10 +37,10 @@
             </div>
         </div>
     </nav>
-    <div class="container col-sm-6 offset-sm-3 text-center" style="margin-top:25px">
+    <div class="container col-sm-6 offset-sm-3" style="margin-top:25px">
         <form action="php/pref_survey.php" method="post">
             <div class="form-group">
-                <h5 style="text-align: left">Sunday</h3>
+                <h5 style="text-align: center">Sunday</h3>
                     <label for="sunday_start">Start</label>
                     <input type="time" class="form-control" id="sunday_start" name="sun_s" placeholder="Start Time" min="13:00"
                         max="23:00">
@@ -49,7 +49,7 @@
                         max="23:00">
             </div>
             <div class="form-group">
-                <h5 style="text-align: left">Monday</h3>
+                <h5 style="text-align: center">Monday</h3>
                     <label for="monday_start">Start</label>
                     <input type="time" class="form-control" id="monday_start" name="mon_s" placeholder="Start Time" min="08:00"
                         max="23:00">
@@ -58,7 +58,7 @@
                         max="23:00">
             </div>
             <div class="form-group">
-                <h5 style="text-align: left">Tuesday</h3>
+                <h5 style="text-align: center">Tuesday</h3>
                     <label for="tuesday_start">Start</label>
                     <input type="time" class="form-control" id="tuesday_start" name="tues_s" placeholder="Start Time" min="08:00"
                         max="23:00">
@@ -67,7 +67,7 @@
                         max="23:00">
             </div>
             <div class="form-group">
-                <h5 style="text-align: left">Wednesday</h3>
+                <h5 style="text-align: center">Wednesday</h3>
                     <label for="wednesday_start">Start</label>
                     <input type="time" class="form-control" id="wednesday_start" name="wed_s" placeholder="Start Time" min="08:00"
                         max="23:00">
@@ -76,7 +76,7 @@
                         max="23:00">
             </div>
             <div class="form-group">
-                <h5 style="text-align: left">Thursday</h3>
+                <h5 style="text-align: center">Thursday</h3>
                     <label for="thursday_start">Start</label>
                     <input type="time" class="form-control" id="thursday_start" name="thur_s" placeholder="Start Time" min="08:00"
                         max="23:00">
@@ -84,8 +84,8 @@
                     <input type="time" class="form-control" id="thursday_end" name="thur_e" placeholder="End Time" min="08:00"
                         max="23:00">
             </div>
-            <div class="form-group">
-                <h5 style="text-align: left">I Prefer Late Shifts</h3>
+            <div class="form-group text-center">
+                <h5 style="text-align: center">I Prefer Late Shifts</h3>
                     <input type="radio" id="yes" name="late_shifts" value="Yes">
                     <label for="yes">Yes</label>
                     <input type="radio" id="no" name="late_shifts" value="No">
