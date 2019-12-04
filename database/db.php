@@ -82,6 +82,14 @@
         return $stmt->get_result();
     }
 
+    function get_unapproved_requests() {
+        global $connection;
+        $queryStr = "SELECT * FROM `shift_request` where approved = false  AND picker IS NOT NULL";
+        $stmt = $connection->prepare($queryStr);
+        $stmt->execute();
+        return $stmt->get_result();
+    }
+
     function get_outgoing_requests($id) {
         global $connection;
         $queryStr = "SELECT * FROM `shift_request` where dropper = ? AND approved = false";
