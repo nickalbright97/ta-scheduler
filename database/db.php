@@ -170,4 +170,23 @@
         $stmt->execute();
     }
 
+    function approve_shift($shiftId) {
+        global $connection;
+        $queryStr = "UPDATE shift_request SET `approved` = true where id = ?";
+        $stmt = $connection->prepare($queryStr);
+        $stmt->bind_param("s", $shiftId);
+        $stmt->execute();
+        return $stmt->get_result();
+    }
+
+    function deny_shift($shiftId) {
+        global $connection;
+        $queryStr = "UPDATE shift_request SET `picker` = NULL where id = ?";
+        $stmt = $connection->prepare($queryStr);
+        $stmt->bind_param("s", $shiftId);
+        $stmt->execute();
+        return $stmt->get_result();
+
+    }
+
 ?>
