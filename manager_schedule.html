@@ -38,34 +38,39 @@
         </div>
     </nav>
 
-    <div class="float-left pt-4" id="ta_pref">
-        <table class="table table-striped table-bordered justify-content-center">
-            <thead>
-                <tr>
-                    <th>TA NAME</th>
-                    <th>Sun</th>
-                    <th>MON</th>
-                    <th>TUES</th>
-                    <th>WED</th>
-                    <th>THURS</th>
-                    <th>Late Shifts</th>
-                    <th>
-                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#ta_table">
-                            >
-                        </button>
-                    </th>
-                </tr>
-            </thead>
-            <tbody id="ta_table" class="collapse show">
-            </tbody>
-        </table>
+
+    <div class="justify-content-center">
+        <div id="ta_pref">
+            <table class="table table-striped table-bordered justify-content-center">
+                <thead>
+                    <tr>
+                        <th>TA Name</th>
+                        <th>Sun</th>
+                        <th>Mon</th>
+                        <th>Tues</th>
+                        <th>Wed</th>
+                        <th>Thurs</th>
+                        <th>Late Shift</th>
+                        <th>
+                            <button class="btn btn-primary" type="button" data-toggle="collapse"
+                                data-target="#ta_table">
+                                >
+                            </button>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="ta_table" class="collapse show">
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pt-4 text-center">
+            <iframe
+                src="https://calendar.google.com/calendar/embed?src=46h17ln9dm2054ouv5bkepeolc%40group.calendar.google.com&ctz=America%2FNew_York"
+                style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
     </div>
 
-    <div class="pt-4 text-center">
-        <iframe
-            src="https://calendar.google.com/calendar/embed?src=46h17ln9dm2054ouv5bkepeolc%40group.calendar.google.com&ctz=America%2FNew_York"
-            style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-    </div>
 </body>
 
 <script src="javascript/load_tables_manager.js"></script>
