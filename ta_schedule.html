@@ -29,7 +29,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="ta_schedule.html">Home<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="ta_schedule.html">Home<span
+                        class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="/api/v1/auth/callback.php">Sign in</a>
                 <a class="nav-item nav-link" href="swap_request.html">Swap request</a>
                 <a class="nav-item nav-link" href="ta_preferences.html">Schedule Preferences</a>
@@ -39,6 +40,27 @@
 
     <div class="container">
         <div class="row">
+            <div class="col-lg justify-content-center">
+                <div class="row">
+                    <div class="pt-4">
+                        <h3 style="text-align: center">Incoming Shift Pickup Requests</h3>
+                        <table class="table table-striped table-bordered justify-content-center">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Date</th>
+                                    <th>Day</th>
+                                    <th>Time</th>
+                                    <th>Claim Shifts</th>
+                                </tr>
+                            </thead>
+                            <tbody id="incoming">
+                            </tbody>
+                        </table>
+                        <button type="submit" class="btn btn-primary">View</button>
+                    </div>
+                </div>
+            </div>
             <div class="col-sm">
                 <div class="container">
                     <div class="row">
@@ -58,35 +80,14 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-sm">
                 <div class="pt-4">
                     <iframe
-                    src="https://calendar.google.com/calendar/embed?src=5dj6sanujpkbvpkqb572k3vdoo%40group.calendar.google.com&ctz=America%2FNew_York"
-                    style="border: 0" width="500" height="375" frameborder="0" scrolling="no"></iframe>
+                        src="https://calendar.google.com/calendar/embed?src=5dj6sanujpkbvpkqb572k3vdoo%40group.calendar.google.com&ctz=America%2FNew_York"
+                        style="border: 0" width="500" height="375" frameborder="0" scrolling="no"></iframe>
                 </div>
             </div>
             <div class="col-sm">
                 <div class="container">
-                    <div class="row">
-                        <div class="pt-4">
-                            <h3 style="text-align: center">Incoming Shift Pickup Requests</h3>
-                            <table class="table table-striped table-bordered justify-content-center">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Date</th>
-                                        <th>Day</th>
-                                        <th>Time</th>
-                                        <th>Claim Shifts</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="incoming">
-                                </tbody>
-                            </table>
-                            <button type="submit" class="btn btn-primary">View</button>
-                        </div>
-                    </div>
                     <div class="row">
                         <div class="pt-4">
                             <h3 style="text-align: center">Outgoing Shift Pickup Requests</h3>
