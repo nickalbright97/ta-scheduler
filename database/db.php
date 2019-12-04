@@ -99,6 +99,16 @@
         return $stmt->get_result();
     }
 
+    function get_next_shift($id) {
+        global $connection;
+        $queryStr = "SELECT * FROM `shift` where id = ?";
+        $stmt = $connection->prepare($queryStr);
+        $stmt->bind_param("s", $id);
+        $stmt->execute();
+        return $stmt->get_result();
+    }
+    
+
     function get_name($id) {
         global $connection;
         $queryStr = "SELECT name FROM `person` where id = ?";
