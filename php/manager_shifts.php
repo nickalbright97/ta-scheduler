@@ -13,16 +13,21 @@ if ($requests->num_rows > 0) {
         echo $nameRow['name'];
         echo "</td>";
         echo "<td>";
-        $date_time = new DateTime($row['datetime']);
-        $formatted_date = $date_time->format('d/m/y H:i');
-        echo $date_time->format('m/d/Y');
+        $date_time_start = new DateTime($row['shift_start']);
+        $formatted_date_start = $date_time_start->format('d/m/y H:i');
+        echo $date_time_start->format('m/d/Y');
+
+        $date_time_end = new DateTime($row['shift_end']);
+        $formatted_date_end = $date_time_end->format('d/m/y H:i');
         echo "</td>";
         echo "<td>";
-        $dw = date( 'l', strtotime($formatted_date));
+        $dw = date( 'l', strtotime($formatted_date_start));
         echo $dw;
         echo "</td>";
         echo "<td>";
-        echo $date_time->format('h:i:s A');
+        echo $date_time_start->format('h:i:s A');
+        echo ' - ';
+        echo $date_time_end->format('h:i:s A');
         echo "</td>";
         echo "<td>";
         $nameReq2 = get_name($row['picker']);
