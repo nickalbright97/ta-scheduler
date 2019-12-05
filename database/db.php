@@ -227,4 +227,30 @@
         return $stmt->get_result();
     }
 
+    function people_table() {
+        global $connection;
+        $queryStr = "SELECT `username`, `name`, `role` FROM `person`";
+        $stmt = $connection->prepare($queryStr);
+        $stmt->execute();
+        return $stmt->get_result();
+    }
+
+    function delete_person($eid) {
+        global $connection;
+        $queryStr = "DELETE FROM `person` where username = ?";
+        $stmt = $connection->prepare($queryStr);
+        $stmt->bind_param("s", $eid);
+        $stmt->execute();
+        return $stmt->get_result();
+    }
+
+    function add_person($eid, $name, $role) {
+        global $connection;
+        $queryStr = "INSERT INTO `person` VALUES (DEFAULT, ?,?,?)";
+        $stmt = $connection->prepare($queryStr);
+        $stmt->bind_param("sss", $eid, $name, $role);
+        $stmt->execute();
+        return $stmt->get_result();
+    }
+
 ?>
