@@ -104,8 +104,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="pt-4" id="calendar">
-                </div>
+                
 
                 <div class="pt-4 text-align: center">
                     <h5>Dr. Weikle Contact Info</h5>

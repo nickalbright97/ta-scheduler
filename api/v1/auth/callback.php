@@ -73,9 +73,11 @@ if (!isset($_GET[CODE])) {
         if ($requests->num_rows > 0) {
             $row = $requests->fetch_assoc();
             $role = $row['role'];
+            $_SESSION['name'] = $row['name'];
         } else {
             $role = 'student';
         }
+
         switch ($role) {
             case 'student':
                 // redirect to student page

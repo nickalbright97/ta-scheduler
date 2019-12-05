@@ -102,8 +102,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="pt-4" id="calendar">
-                </div>
 
             </div>
         </div>
