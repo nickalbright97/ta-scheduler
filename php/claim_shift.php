@@ -7,9 +7,9 @@ $parts = explode(" ", $button);
 $request = claim_shift($parts[2]);
 
 if ($_SESSION['role'] == 'ta_lead') {
-    header( "Location: ../../../../ta_lead_schedule.html");
+    header( "Location: ../../../../ta_lead_schedule.php");
 } else {
-    header( "Location: ../../../../ta_schedule.html");
+    header( "Location: ../../../../ta_schedule.php");
 }
 
 
