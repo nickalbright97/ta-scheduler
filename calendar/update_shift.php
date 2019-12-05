@@ -7,6 +7,8 @@
     $start = $_POST['start'];
     $end = $_POST['end'];
 
+    echo($id . $owner . $start . $end);
+
     // update the records
     $sql = "UPDATE shift SET owner=?, shift_start=?, shift_end=? WHERE id=?";
     $query = $connection->prepare($sql);

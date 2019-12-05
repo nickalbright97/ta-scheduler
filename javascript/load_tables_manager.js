@@ -52,7 +52,7 @@ function load_survey_resp_tables_date($event) {
     };  
 
     date = document.getElementById("date").value ;
-    xmlhttp.open("GET","http://127.0.0.1:8000/php/display_survey.php?date=" + date, true);
+    xmlhttp.open("GET","php/display_survey.php?date=" + date, true);
     xmlhttp.send();
 }
 

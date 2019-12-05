@@ -12,7 +12,7 @@ function fmt(date) {
 
 }
 
-var managerMode = false;
+var managerMode = true;
 
 var date = new Date();
 var d = date.getDate();
@@ -95,12 +95,12 @@ var calendar = $('#calendar').fullCalendar({
             });
           }
         },
-
+*/
         eventResize: function (event) {
         var start = fmt(event.start);
         var end = fmt(event.end);
         $.ajax({
-            url: 'update_shifts.php',
+            url: 'update_shift.php',
             data: 'title=' + event.title + '&start=' + start + '&end=' + end + '&id=' + event.id,
             type: "POST",
             success: function (json) {
@@ -108,7 +108,7 @@ var calendar = $('#calendar').fullCalendar({
         }
           });
 
-        }*/
+        }
 
 
       });
