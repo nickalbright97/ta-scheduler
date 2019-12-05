@@ -15,6 +15,11 @@ function fmt(date) {
 
 }
 
+function fmt2(date) {
+    return date.format("HH:mm");
+
+}
+
 var canEdit = <?php echo json_encode($canEdit); ?>;
 var canViewNames = <?php echo json_encode($canViewNames); ?>;
 
@@ -37,7 +42,7 @@ var calendar = $('#calendar').fullCalendar({
     // Convert the allDay from string to boolean
     eventRender: function (event, element, view) {
         if(!canViewNames){
-            element.text('TA Shift');
+            element.text(fmt2(event.start) + ' - TA Shift');
         }
         event.allDay = false;
     },
