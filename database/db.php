@@ -6,6 +6,8 @@
     $password = "$3kuDoG";
     $port = "3306";  //this should probably be 3306 (mysql default) for most of you
     $connection = new mysqli($host, $user, $password, $database, $port);
+    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
     if ($connection->connect_errno) {
 			echo "Failed to connect to MySQL: (" . $connection->connect_errno . ") " . $connection->connect_error;
     }
