@@ -3,7 +3,7 @@
 
     $id = $_POST['id'];
     $sql = "DELETE from shift WHERE id=?";
-    $sql->bind_param("i", $id);
     $query = $connection->prepare($sql);
+    $query->bind_param("i", $id);
     $query->execute();
 ?>

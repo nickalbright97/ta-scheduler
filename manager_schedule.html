@@ -16,6 +16,137 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+
+    <link href='calendar/lib/fullcalendar.min.css' rel='stylesheet'/>
+    <link href='calendar/lib/fullcalendar.print.css' rel='stylesheet' media='print'/>
+    <script src='calendar/lib/jquery.min.js'></script>
+    <script src='calendar/lib/moment.min.js'></script>
+    <script src='calendar/lib/jquery-ui.custom.min.js'></script>
+    <script src='calendar/lib/fullcalendar.min.js'></script>
+
+    <script>
+        $(document).ready(function () {
+            function fmt(date) {
+                return date.format("YYYY-MM-DD HH:mm");
+
+            }
+            var managerView = false;
+            var date = new Date();
+            var d = date.getDate();
+            var m = date.getMonth();
+            var y = date.getFullYear();
+
+            var calendar = $('#calendar').fullCalendar({
+                editable: managerView,
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+
+                events: "calendar/shifts.php",
+
+                // Convert the allDay from string to boolean
+                eventRender: function (event, element, view) {
+                    if (event.allDay === 'true') {
+                        event.allDay = true;
+                    } else {
+                        event.allDay = false;
+                    }
+                },
+                selectable: managerView,
+                selectHelper: true,
+                select: function (start, end, allDay) {
+                    var title = prompt('Event Title:');
+                    if (title) {
+                        var start = fmt(start);
+                        var end = fmt(end);
+                        $.ajax({
+                            url: 'calendar/add_shift.php',
+                            data: 'title=' + title + '&start=' + start + '&end=' + end,
+                            type: "POST",
+                            success: function (json) {
+                                alert('Added Successfully');
+                            }
+                        });
+                        calendar.fullCalendar('renderEvent',
+                            {
+                                title: title,
+                                start: start,
+                                end: end,
+                                allDay: allDay
+                            },
+                            true // make the event "stick"
+                        );
+                    }
+                    calendar.fullCalendar('unselect');
+                },
+                //
+                // editable: false,
+                // eventDrop: function (event, delta) {
+                //     var start = fmt(event.start);
+                //     var end = fmt(event.end);
+                //     $.ajax({
+                //         url: 'calendar/update_shift.php',
+                //         data: 'title=' + event.title + '&start=' + start + '&end=' + end + '&id=' + event.id,
+                //         type: "POST",
+                //         success: function (json) {
+                //             alert("Updated Successfully");
+                //         }
+                //     });
+                // },
+                eventClick: function (event) {
+                    window.location.href = "calendar/shift.php?id=" + event.id;
+                },
+                /*
+                var decision = confirm("Do you want to remove event?");
+                if (decision) {
+                  $.ajax({
+                    type: "POST",
+                    url: "delete_event.php",
+                    data: "&id=" + event.id,
+                    success: function (json) {
+                      $('#calendar').fullCalendar('removeEvents', event.id);
+                      alert("Updated Successfully");
+                    }
+                  });
+                }
+              },
+                eventResize: function (event) {
+                    var start = fmt(event.start);
+                    var end = fmt(event.end);
+                    $.ajax({
+                        url: 'calendar/update_shifts.php',
+                        data: 'title=' + event.title + '&start=' + start + '&end=' + end + '&id=' + event.id,
+                        type: "POST",
+                        success: function (json) {
+                            alert("Updated Successfully");
+                        }
+                    });
+
+                }*/
+
+            });
+
+        });
+
+    </script>
+    <style>
+
+        body {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 14px;
+            font-family: "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
+
+        }
+
+        #calendar {
+            width: 900px;
+            margin: 0 auto;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -67,9 +198,8 @@
         <div class="col-lg justify-content-center">
             <h3 class="text-center">Current TA Schedule</h3>
             <div class="pt-4 text-center">
-                <iframe
-                    src="https://calendar.google.com/calendar/embed?src=46h17ln9dm2054ouv5bkepeolc%40group.calendar.google.com&ctz=America%2FNew_York"
-                    style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                <iframe src="https://calendar.google.com/calendar/embed?src=46h17ln9dm2054ouv5bkepeolc%40group.calendar.google.com&ctz=America%2FNew_York"
+                    style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>-->
             </div>
         </div>
     </div>
