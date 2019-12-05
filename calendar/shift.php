@@ -11,4 +11,8 @@
 
     printf("<p>Name: %s</p><p>Shift Start: %s</p><p>Shift End: %s</p>",$result[1], $result[2],$result[3]);
 
+    echo '<form action="/calendar/delete_shift.php" method="post">
+        <input type="number" name="id" value="' .  $id .'" style="display: none"/>
+        <input type="submit" name="submit" value="Submit" />
+        </form>';
 ?>

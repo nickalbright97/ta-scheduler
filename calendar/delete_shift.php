@@ -6,4 +6,7 @@
     $query = $connection->prepare($sql);
     $query->bind_param("i", $id);
     $query->execute();
+
+    header('Location: /../manager_schedule.php');
+    die();
 ?>

@@ -83,7 +83,7 @@ var calendar = $('#calendar').fullCalendar({
         },
         eventClick: function (event) {
         if(canViewNames || canEdit){
-            window.location.href = "shift.php?id=" + event.id;
+            window.location.href = "/calendar/shift.php?id=" + event.id;
         }
     },
           /*
