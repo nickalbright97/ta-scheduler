@@ -17,12 +17,6 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
-    <link href='calendar/lib/fullcalendar.min.css' rel='stylesheet'/>
-    <link href='calendar/lib/fullcalendar.print.css' rel='stylesheet' media='print'/>
-    <script src='calendar/lib/jquery.min.js'></script>
-    <script src='calendar/lib/moment.min.js'></script>
-    <script src='calendar/lib/jquery-ui.custom.min.js'></script>
-    <script src='calendar/lib/fullcalendar.min.js'></script>
 
     <?php global $canEdit; $canEdit = true; ?>
     <?php global $canEdit; $canViewNames = true; ?>
@@ -78,8 +72,7 @@
         </div>
         <div class="col-lg justify-content-center">
             <h3 class="text-center">Current TA Schedule</h3>
-            <div class="pt-4 text-center" id="calendar">
-            </div>
+            <div class="pt-4 text-center" id="calendar"></div>
         </div>
     </div>
     <script src="javascript/load_tables_manager.js"></script>

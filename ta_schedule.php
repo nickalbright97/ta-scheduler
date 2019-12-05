@@ -106,6 +106,7 @@
             </div>
         </div>
     </div>
+    <div class="pt-4 text-center" id="calendar"></div>
     <script src="javascript/load_tables_ta.js"></script>
 </body>
 
