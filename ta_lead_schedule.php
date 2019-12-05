@@ -36,7 +36,7 @@
                 <a class="nav-item nav-link active" href="ta_lead_schedule.php">Home<span
                         class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="/api/v1/auth/callback.php">Sign in</a>
-                <a class="nav-item nav-link" href="swap_request.html">Swap request</a>
+                <a class="nav-item nav-link" href="offer_shift.php">Swap request</a>
                 <a class="nav-item nav-link" href="ta_preferences.html">Schedule Preferences</a>
             </div>
         </div>
