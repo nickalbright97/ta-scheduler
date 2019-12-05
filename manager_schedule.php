@@ -17,12 +17,6 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
-    <link href='calendar/lib/fullcalendar.min.css' rel='stylesheet'/>
-    <link href='calendar/lib/fullcalendar.print.css' rel='stylesheet' media='print'/>
-    <script src='calendar/lib/jquery.min.js'></script>
-    <script src='calendar/lib/moment.min.js'></script>
-    <script src='calendar/lib/jquery-ui.custom.min.js'></script>
-    <script src='calendar/lib/fullcalendar.min.js'></script>
 
     <?php global $canEdit; $canEdit = true; ?>
     <?php global $canEdit; $canViewNames = true; ?>
@@ -32,7 +26,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="https://www.jmu.edu/cs/" target="_blank">
-            <img src="JMUCSLOGO.png" height="100">
+            <img src="JMUCSLOGO.png" height="100" alt="jmu logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -78,15 +72,15 @@
         </div>
         <div class="col-lg justify-content-center">
             <h3 class="text-center">Current TA Schedule</h3>
-            <div class="pt-4 text-center" id="calendar">
-            </div>
+            <div class="pt-4 text-center" id="calendar"></div>
         </div>
     </div>
+    <script src="javascript/load_tables_manager.js"></script>
+    <script type="text/javascript">
+        load_ta_table();
+    </script>
 </body>
 
-<script src="javascript/load_tables_manager.js"></script>
-<script type="text/javascript">
-    load_ta_table();
-</script>
+
 
 </html>
