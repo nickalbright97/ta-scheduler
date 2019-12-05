@@ -191,11 +191,29 @@
         $stmt->execute();
     }
 
+    function get_shift_request($id) {
+        global $connection;
+        $queryStr = "SELECT * FROM `shift_request` where id = ?";
+        $stmt = $connection->prepare($queryStr);
+        $stmt->bind_param("s", $id);
+        $stmt->execute();
+        return $stmt->get_result();
+    }
+
     function approve_shift($shiftId) {
         global $connection;
         $queryStr = "UPDATE shift_request SET `approved` = true where id = ?";
         $stmt = $connection->prepare($queryStr);
         $stmt->bind_param("s", $shiftId);
+        $stmt->execute();
+        return $stmt->get_result();
+    }
+
+    function swap_shift($shiftId, $personId) {
+        global $connection;
+        $queryStr = "UPDATE shift SET `owner` = ? where id = ?";
+        $stmt = $connection->prepare($queryStr);
+        $stmt->bind_param("ss", $personId, $shiftId);
         $stmt->execute();
         return $stmt->get_result();
     }
@@ -207,7 +225,6 @@
         $stmt->bind_param("s", $shiftId);
         $stmt->execute();
         return $stmt->get_result();
-
     }
 
 ?>
