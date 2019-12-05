@@ -61,7 +61,7 @@ CREATE TABLE
 		`late_shifts` BOOLEAN,
 		PRIMARY KEY (`id`),
 		KEY `preference_fk` (`person_id`),
-		CONSTRAINT `preference_fk` FOREIGN KEY (`person_id`) REFERENCES `person` (`id`) 
+		CONSTRAINT `preference_fk` FOREIGN KEY (`person_id`) REFERENCES `person` (`id`)  ON DELETE CASCADE
 	);
 
 /*Table structure for table `shift`*/
@@ -73,7 +73,7 @@ CREATE TABLE
 	`shift_end` DATETIME NOT NULL,
 	PRIMARY KEY (`id`),
 	KEY `shift_fk` (`owner`),
-	CONSTRAINT `shift_fk` FOREIGN KEY (`owner`) REFERENCES `person` (`id`) );
+	CONSTRAINT `shift_fk` FOREIGN KEY (`owner`) REFERENCES `person` (`id`)  ON DELETE CASCADE ); 
 
 /*Table structure for table `shift_request`*/
 DROP TABLE IF EXISTS `shift_request`;
@@ -88,5 +88,5 @@ CREATE TABLE
 	PRIMARY KEY (`id`),
 	KEY `dropper_fk` (`dropper`),
 	KEY `picker_fk` (`picker`),
-	CONSTRAINT `dropper_fk` FOREIGN KEY (`dropper`) REFERENCES `person` (`id`),
-	CONSTRAINT `picker_fk` FOREIGN KEY (`picker`) REFERENCES `person` (`id`) );
+	CONSTRAINT `dropper_fk` FOREIGN KEY (`dropper`) REFERENCES `person` (`id`)  ON DELETE CASCADE,
+	CONSTRAINT `picker_fk` FOREIGN KEY (`picker`) REFERENCES `person` (`id`)  ON DELETE CASCADE );
