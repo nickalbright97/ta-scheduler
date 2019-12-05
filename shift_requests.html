@@ -1,12 +1,9 @@
-<?php
-    include("../database/db.php");
-?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Feedback</title>
+    <title>TA Schedule</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -21,11 +18,10 @@
         crossorigin="anonymous"></script>
 </head>
 
-
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="https://www.jmu.edu/cs/" target="_blank">
-            <img src="../JMUCSLOGO.png" height="100">
+            <img src="JMUCSLOGO.png" height="100">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,21 +29,38 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="../home.html">Home <span
-                        class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="../signin.html">Sign in</a>
-                <a class="nav-item nav-link" href="../feedback.html">Feedback</a>
+                <a class="nav-item nav-link active" href="manager_schedule.html">Home</a>
+                <a class="nav-item nav-link" href="/api/v1/auth/callback.php">Sign in</a>
+                <a class="nav-item nav-link" href="manager_analytics.html">Feedback Analytics</a>
+                <a class="nav-item nav-link" href="shift_requests.html">Shift Requests</a>
             </div>
         </div>
     </nav>
-    <p> Thankyou, we recieved your feedback.</p>
-<?php
-    if(isset($_POST['submit'])) {
-        $resp = insert_feedback($_POST['courseCodeInput'], $_POST['professorNameInput'], str_replace("T", " ",$_POST['date']).":00", $_POST['feedbackTextArea']);
-        echo "<p>" . $resp . "</p>";
-    }
-
-?>
-
+    <div class="col-sm">
+        <div class="container">
+            <div class="row">
+                <div class="pt-4">
+                    <h3 style="text-align: center">Shift requests awaiting approval</h3>
+                    <table class="table table-striped table-bordered justify-content-center">
+                        <thead>
+                            <tr>
+                                <th>Offerer</th>
+                                <th>Date</th>
+                                <th>Day</th>
+                                <th>Time</th>
+                                <th>Claimant</th>
+                                <th>Approve</th>
+                                <th>Deny</th>
+                            </tr>
+                        </thead>
+                        <tbody id="requests">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
+
+<script src="javascript/manager_shifts.js"></script>

@@ -1,10 +1,18 @@
 <?php
 include("../database/db.php");
+session_start();
 
 $button = htmlspecialchars($_POST['shift']);
 $parts = explode(" ", $button);
 $request = claim_shift($parts[2]);
-header( "Location: ../../../../ta_schedule.html");
+
+if ($_SESSION['role'] == 'ta_lead') {
+    header( "Location: ../../../../ta_lead_schedule.html");
+} else {
+    header( "Location: ../../../../ta_schedule.html");
+}
+
+
 
 
 

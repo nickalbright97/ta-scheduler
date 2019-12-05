@@ -94,7 +94,7 @@ if (!isset($_GET[CODE])) {
                  // redirect to ta lead page
                  $_SESSION['role'] = 'ta_lead';
                  $_SESSION['username'] = $username;
-                header( "Location: ../../../../ta_schedule.html");
+                header( "Location: ../../../../ta_lead_schedule.html");
                 break; 
             case 'manager':
                  // redirect to manager page
