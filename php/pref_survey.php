@@ -34,9 +34,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link" href="../ta_schedule.html">Home<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="../ta_schedule.php">Home<span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="/api/v1/auth/callback.php">Sign in</a>
-                <a class="nav-item nav-link" href="../ta_schedule.html">TA Schedule</a>
+                <a class="nav-item nav-link" href="../ta_schedule.php">TA Schedule</a>
                 <a class="nav-item nav-link" href="../swap_request.html">Swap request</a>
                 <a class="nav-item nav-link active" href="../ta_preferences.html">Schedule Preferences</a>
             </div>

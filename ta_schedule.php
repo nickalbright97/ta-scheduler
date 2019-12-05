@@ -16,6 +16,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+
+    <?php global $canEdit; $canEdit = false; ?>
+    <?php global $canEdit; $canViewNames = true; ?>
+    <?php include "calendar/calendar_script.php" ?>
 </head>
 
 <body>
@@ -29,7 +33,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="ta_schedule.html">Home<span
+                <a class="nav-item nav-link active" href="ta_schedule.php">Home<span
                         class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="/api/v1/auth/callback.php">Sign in</a>
                 <a class="nav-item nav-link" href="swap_request.html">Swap request</a>
@@ -98,10 +102,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="pt-4">
-                    <iframe
-                        src="https://calendar.google.com/calendar/embed?src=5dj6sanujpkbvpkqb572k3vdoo%40group.calendar.google.com&ctz=America%2FNew_York"
-                        style="border: 0" width="500" height="375" frameborder="0" scrolling="no"></iframe>
+                <div class="pt-4" id="calendar">
                 </div>
 
             </div>

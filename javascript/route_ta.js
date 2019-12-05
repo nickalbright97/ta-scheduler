@@ -25,9 +25,9 @@ function ta_route() {
     get_role()
         .then(role =>{
             if (role == "ta_lead") {
-                window.location.href = "../ta_lead_schedule.html";
+                window.location.href = "../ta_lead_schedule.php";
             } else {
-                window.location.href = "../ta_schedule.html";
+                window.location.href = "../ta_schedule.php";
             }
         })
         .catch(err=> {

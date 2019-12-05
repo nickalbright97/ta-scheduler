@@ -16,6 +16,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <?php global $canEdit; $canEdit = false; ?>
+    <?php global $canEdit; $canViewNames = false; ?>
+    <?php include "calendar/calendar_script.php" ?>
 </head>
 
 <body>
@@ -29,7 +32,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="home.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="home.php">Home <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="api/v1/auth/callback.php">Sign in</a>
                 <a class="nav-item nav-link" href="feedback.html">Feedback</a>
             </div>
@@ -42,10 +45,7 @@
         <p>Don't forget to fill out the feedback survey!</p>
 
     </div>
-    <div class="pt-4 text-center">
-        <iframe
-            src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FNew_York&amp;src=ZjBkOGdqZHNmYWY3dGp2Ymg0aWhucW92ajBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%233F51B5&amp;showTitle=1"
-            style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    <div class="pt-4 text-center" id="calendar">
     </div>
 </body>
 
