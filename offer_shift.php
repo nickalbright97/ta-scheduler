@@ -42,7 +42,7 @@ session_start();
 
     <div class="form-group">
         <form action="/php/add_request.php" method="post">
-            <label for="sel1">Select list:</label>
+            <label for="sel1">Shift select:</label>
             <select class="form-control" id="sel1" name="shift-select">
 
                 <?php
