@@ -32,7 +32,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="https://www.jmu.edu/cs/" target="_blank">
-            <img src="JMUCSLOGO.png" height="100">
+            <img src="JMUCSLOGO.png" height="100" alt="jmu logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -82,11 +82,12 @@
             </div>
         </div>
     </div>
+    <script src="javascript/load_tables_manager.js"></script>
+    <script type="text/javascript">
+        load_ta_table();
+    </script>
 </body>
 
-<script src="javascript/load_tables_manager.js"></script>
-<script type="text/javascript">
-    load_ta_table();
-</script>
+
 
 </html>
