@@ -102,12 +102,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="pt-4" id="calendar">
-                </div>
 
             </div>
         </div>
     </div>
+    <div class="pt-4" id="calendar"></div>
 </body>
 
 <script src="javascript/load_tables_ta.js"></script>
