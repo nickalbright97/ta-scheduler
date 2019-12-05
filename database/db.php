@@ -131,7 +131,7 @@
 
     function get_role($id) {
         global $connection;
-        $queryStr = "SELECT role FROM `person` where `username` = ?";
+        $queryStr = "SELECT * FROM `person` where `username` = ?";
         $stmt = $connection->prepare($queryStr);
         $stmt->bind_param("s", $id);
         $stmt->execute();
@@ -258,6 +258,24 @@
         $queryStr = "INSERT INTO `person` VALUES (DEFAULT, ?,?,?)";
         $stmt = $connection->prepare($queryStr);
         $stmt->bind_param("sss", $eid, $name, $role);
+        $stmt->execute();
+        return $stmt->get_result();
+    }
+
+    function get_tas_shifts($id) {
+        global $connection;
+        $queryStr = "SELECT * FROM `shift` where `owner` = ?";
+        $stmt = $connection->prepare($queryStr);
+        $stmt->bind_param("s", $id);
+        $stmt->execute();
+        return $stmt->get_result();
+    }
+
+    function make_request($shiftId, $personId) {
+        global $connection;
+        $queryStr = "INSERT INTO `shift_request` VALUES (DEFAULT, ?, NULL, ?, NULL, 0)";
+        $stmt = $connection->prepare($queryStr);
+        $stmt->bind_param("ss", $personId, $shiftId);
         $stmt->execute();
         return $stmt->get_result();
     }
