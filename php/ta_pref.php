@@ -8,27 +8,38 @@
         echo $resp['name'];
         echo "</td>";
         echo "<td>";
-        echo $resp['sunday_start'] . " - " . $resp['sunday_end'];
+        echoColumn($resp['sunday_start'], $resp['sunday_end']);
         echo "</td>";
         echo "<td>";
-        echo $resp['monday_start'] . " - " . $resp['monday_end'];
+        echoColumn($resp['monday_start'], $resp['monday_end']);
         echo "</td>";
         echo "<td>";
-        echo $resp['tuesday_start'] . " - " . $resp['tuesday_end'];
+        echoColumn($resp['tuesday_start'], $resp['tuesday_end']);
         echo "</td>";
         echo "<td>";
-        echo $resp['wednesday_start'] . " - " . $resp['wednesday_end'];
+        echoColumn($resp['wednesday_start'], $resp['wednesday_end']);
         echo "</td>";
         echo "<td>";
-        echo $resp['thursday_start'] . " - " . $resp['thursday_end'];
+        echoColumn($resp['thursday_start'], $resp['thursday_end']);
         echo "</td>";
         echo "<td>";
         if($resp['late_shifts'] == 1) {
-            echo "True";
+            echo "Yes";
         } else {
-            echo "False";
+            echo "No";
         }
         echo "</td>";
         echo "</tr>";
+    }
+
+
+    function echoColumn($st, $sd) {
+        if ($st == "00:00:00") {
+            echo "Unavailable";
+        } else {
+            $date_s = new DateTime($st);
+            $date_e = new DateTime($sd);
+            echo $date_s->format('h:i:s A') . " -" . $date_e->format('h:i:s A');
+        }
     }
 ?>
