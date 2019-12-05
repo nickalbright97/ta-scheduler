@@ -63,7 +63,7 @@ $dataPointsProfessors = array(
                     text: "Professor Share of TA Hour Survey Responses"
                 },
                 subtitles: [{
-                    text: "November 2019"
+                    text: "December 2019"
                 }],
                 data: [{
                     type: "pie",
