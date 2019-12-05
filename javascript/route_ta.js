@@ -33,7 +33,4 @@ function ta_route() {
         .catch(err=> {
             console.error(err);
         })
-
-   
-
 }

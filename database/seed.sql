@@ -101,7 +101,7 @@ INSERT INTO `preferences` VALUES (5,19, '10:00:00', '13:30:00', '','','','','','
 INSERT INTO `preferences` VALUES (6,11, '14:00:00' , '17:00:00','','','','','','','','', true);
 
 
-INSERT INTO `shift` VALUES (1,1,'2019-12-18 18:00:00','2019-12-18 20:00:00');
+INSERT INTO `shift` VALUES (1,1,'2019-12-30 18:00:00','2019-12-30 20:00:00');
 INSERT INTO `shift` VALUES (2,2,'2019-12-29 16:00:00','2019-12-29 18:00:00');
 INSERT INTO `shift` VALUES (3,3,'2019-12-23 18:00:00','2019-12-23 20:00:00');
 INSERT INTO `shift` VALUES (4,30,'2019-12-14 16:00:00','2019-12-14 18:00:00');
@@ -123,8 +123,8 @@ INSERT INTO `shift` VALUES (19,13,'2019-12-08 01:00:00','2019-12-08 03:00:00');
 INSERT INTO `shift` VALUES (20,12,'2019-12-07 08:00:00','2019-12-07 10:00:00');
 
 INSERT INTO `shift_request` VALUES (1,1,null, 1, 'tempor i', false);
-INSERT INTO `shift_request` VALUES (2,2,null, 3, 'velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupi', false);
-INSERT INTO `shift_request` VALUES (3,3,null, 4, 'dolor in reprehenderit in v', false);
+INSERT INTO `shift_request` VALUES (2,2,null, 2, 'velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupi', false);
+INSERT INTO `shift_request` VALUES (3,3,null, 3, 'dolor in reprehenderit in v', false);
 INSERT INTO `shift_request` VALUES (4,4,null, 6, 'ad minim veniam, quis nostrud exerc', false);
 INSERT INTO `shift_request` VALUES (5,8,null, 10, 'incididunt ut labore et dolore magna aliqua. Ut enim ad ', false);
 INSERT INTO `shift_request` VALUES (6,10,null, 12,'consequat. Duis aute irure dolor in reprehenderit ', false);

@@ -4,14 +4,6 @@ include("../database/db.php");
 session_start();
 $requests = get_next_shift($_SESSION['id']);
 
-/*
-$row = [
-    "date" =>"2019-11-08",
-    "day" => "Friday",
-    "time" => "5-7pm",
-];
-*/
-
 if ($requests->num_rows > 0) {
     // output data of each row
     while ($row = $requests->fetch_assoc()) {

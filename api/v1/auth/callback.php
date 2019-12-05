@@ -36,11 +36,6 @@ if (!isset($_GET[CODE])) {
     $_SESSION["access_token"] = $token->getToken();
     $_SESSION["refresh_token"] = $r_token;
 
-    // print_r($_SESSION["access_token"]);
-    // print_r($_SESSION["refresh_token"]);
-    /* do something with that token... (probably not just print to screen, but whatevs...) */
-    // echo $token->getToken();
-
     $curl = curl_init();
     $profile = print_r_results($_SESSION["access_token"], $curl, '/users/self/profile');
     $role = "";

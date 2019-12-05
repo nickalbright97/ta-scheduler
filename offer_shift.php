@@ -46,6 +46,7 @@ session_start();
             <select class="form-control" id="sel1" name="shift-select">
 
                 <?php
+                include ("database/add_request.php");
                 $request = get_tas_shifts($_SESSION['id']);
                 if ($request->num_rows > 0) {
                     while ($row = $request->fetch_assoc()) {
