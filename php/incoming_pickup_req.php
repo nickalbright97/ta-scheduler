@@ -21,11 +21,13 @@ if ($requests->num_rows > 0) {
         echo $nameRow['name'];
         echo "</td>";
         echo "<td>";
-        $date_time_start = new DateTime($row['shift_start']);
+        $shiftReq = get_shift($row['shift_ref']);
+        $shiftRow = $shiftReq->fetch_assoc();
+        $date_time_start = new DateTime($shiftRow['shift_start']);
         $formatted_date_start = $date_time_start->format('d/m/y H:i');
         echo $date_time_start->format('m/d/Y');
 
-        $date_time_end = new DateTime($row['shift_end']);
+        $date_time_end = new DateTime($shiftRow['shift_end']);
         $formatted_date_end = $date_time_end->format('d/m/y H:i');
         echo "</td>";
         echo "<td>";

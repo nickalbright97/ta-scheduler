@@ -81,12 +81,12 @@ CREATE TABLE
 	`shift_request` ( `id` INT(11) NOT NULL AUTO_INCREMENT,
 	`dropper` INT(11) NOT NULL,
 	`picker` INT(11),
-	`shift_start` DATETIME NOT NULL,
-	`shift_end` DATETIME NOT NULL,
+	`shift_ref` INT(11) NOT NULL,
 	`comments` VARCHAR(100) DEFAULT NULL,
 	`approved` BOOLEAN,
 	PRIMARY KEY (`id`),
 	KEY `dropper_fk` (`dropper`),
 	KEY `picker_fk` (`picker`),
 	CONSTRAINT `dropper_fk` FOREIGN KEY (`dropper`) REFERENCES `person` (`id`),
-	CONSTRAINT `picker_fk` FOREIGN KEY (`picker`) REFERENCES `person` (`id`) );
+	CONSTRAINT `picker_fk` FOREIGN KEY (`picker`) REFERENCES `person` (`id`),
+    CONSTRAINT `shift_ref_fk` FOREIGN KEY (`shift_ref`) REFERENCES `shift` (`id`) );

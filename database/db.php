@@ -120,6 +120,15 @@
         return $stmt->get_result();
     }
 
+    function get_shift($id) {
+        global $connection;
+        $queryStr = "SELECT * FROM `shift` where id = ?";
+        $stmt = $connection->prepare($queryStr);
+        $stmt->bind_param("s", $id);
+        $stmt->execute();
+        return $stmt->get_result();
+    }
+
     function get_role($id) {
         global $connection;
         $queryStr = "SELECT role FROM `person` where `username` = ?";
