@@ -6,7 +6,7 @@ require_once("../database/db.php");
 $json = array();
 
 // Query that retrieves events
-$request = "SELECT shift.id, person.name, shift_start, shift_end FROM shift JOIN person ON person.id = shift.id ORDER BY id";
+$request = "SELECT shift.id, person.name, shift_start, shift_end FROM shift JOIN person ON person.id = shift.owner ORDER BY id";
 
 
 // Execute the query
