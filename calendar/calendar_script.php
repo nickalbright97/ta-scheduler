@@ -12,13 +12,15 @@ function fmt(date) {
 
 }
 
+var managerMode = false;
+
 var date = new Date();
 var d = date.getDate();
 var m = date.getMonth();
 var y = date.getFullYear();
 
 var calendar = $('#calendar').fullCalendar({
-    editable: true,
+    editable: managerMode,
     header: {
     left: 'prev,next today',
       center: 'title',
@@ -29,86 +31,87 @@ var calendar = $('#calendar').fullCalendar({
 
     // Convert the allDay from string to boolean
     eventRender: function (event, element, view) {
-    if (event.allDay === 'true') {
-        event.allDay = true;
-    } else {
-        event.allDay = false;
-    }
-},
-    selectable: true,
-    selectHelper: true,
-    select: function (start, end, allDay) {
-    var title = prompt('Event Title:');
-    if (title) {
-        var start = fmt(start);
-        var end = fmt(end);
-        $.ajax({
-          url: 'add_shift.php',
-          data: 'title=' + title + '&start=' + start + '&end=' + end,
-          type: "POST",
-          success: function (json) {
-            alert('Added Successfully');
+        if(!managerMode){
+            element.text('TA Shift');
         }
-        });
-        calendar.fullCalendar('renderEvent',
-            {
-              title: title,
-              start: start,
-              end: end,
-              allDay: allDay
-            },
-            true // make the event "stick"
-        );
-      }
-    calendar.fullCalendar('unselect');
-},
-
-    editable: false,
-    eventDrop: function (event, delta) {
-    var start = fmt(event.start);
-    var end = fmt(event.end);
-    $.ajax({
-        url: 'update_shift.php',
-        data: 'title=' + event.title + '&start=' + start + '&end=' + end + '&id=' + event.id,
-        type: "POST",
-        success: function (json) {
-        alert("Updated Successfully");
-    }
-      });
+        event.allDay = false;
     },
-    eventClick: function (event) {
-    window.location.href = "shift.php?id=" + event.id;
-
-},
-      /*
-      var decision = confirm("Do you want to remove event?");
-      if (decision) {
-        $.ajax({
-          type: "POST",
-          url: "delete_event.php",
-          data: "&id=" + event.id,
-          success: function (json) {
-            $('#calendar').fullCalendar('removeEvents', event.id);
-            alert("Updated Successfully");
+        selectable: managerMode,
+        selectHelper: true,
+        select: function (start, end, allDay) {
+        var title = prompt('Event Title:');
+        if (title) {
+            var start = fmt(start);
+            var end = fmt(end);
+            $.ajax({
+              url: 'add_shift.php',
+              data: 'title=' + title + '&start=' + start + '&end=' + end,
+              type: "POST",
+              success: function (json) {
+                alert('Added Successfully');
+            }
+            });
+            calendar.fullCalendar('renderEvent',
+                {
+                  title: title,
+                  start: start,
+                  end: end,
+                  allDay: allDay
+                },
+                true // make the event "stick"
+            );
           }
-        });
-      }
-    },*/
-    eventResize: function (event) {
-    var start = fmt(event.start);
-    var end = fmt(event.end);
-    $.ajax({
-        url: 'update_shifts.php',
-        data: 'title=' + event.title + '&start=' + start + '&end=' + end + '&id=' + event.id,
-        type: "POST",
-        success: function (json) {
-        alert("Updated Successfully");
-    }
+        calendar.fullCalendar('unselect');
+    },
+
+        editable: managerMode,
+        eventDrop: function (event, delta) {
+        var start = fmt(event.start);
+        var end = fmt(event.end);
+        $.ajax({
+            url: 'update_shift.php',
+            data: 'title=' + event.title + '&start=' + start + '&end=' + end + '&id=' + event.id,
+            type: "POST",
+            success: function (json) {
+            alert("Updated Successfully");
+        }
+          });
+        },
+        eventClick: function (event) {
+        window.location.href = "shift.php?id=" + event.id;
+
+    },
+          /*
+          var decision = confirm("Do you want to remove event?");
+          if (decision) {
+            $.ajax({
+              type: "POST",
+              url: "delete_event.php",
+              data: "&id=" + event.id,
+              success: function (json) {
+                $('#calendar').fullCalendar('removeEvents', event.id);
+                alert("Updated Successfully");
+              }
+            });
+          }
+        },
+
+        eventResize: function (event) {
+        var start = fmt(event.start);
+        var end = fmt(event.end);
+        $.ajax({
+            url: 'update_shifts.php',
+            data: 'title=' + event.title + '&start=' + start + '&end=' + end + '&id=' + event.id,
+            type: "POST",
+            success: function (json) {
+            alert("Updated Successfully");
+        }
+          });
+
+        }*/
+
+
       });
-
-    }
-
-  });
 
 });
 
@@ -127,5 +130,4 @@ margin-top: 40px;
   width: 900px;
   margin: 0 auto;
 }
-
 </style>
