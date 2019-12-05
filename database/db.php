@@ -200,6 +200,15 @@
         return $stmt->get_result();
     }
 
+    function delete_shift_request($id) {
+        global $connection;
+        $queryStr = "DELETE FROM `shift_request` where id = ?";
+        $stmt = $connection->prepare($queryStr);
+        $stmt->bind_param("s", $id);
+        $stmt->execute();
+        return $stmt->get_result();
+    }
+
     function approve_shift($shiftId) {
         global $connection;
         $queryStr = "UPDATE shift_request SET `approved` = true where id = ?";

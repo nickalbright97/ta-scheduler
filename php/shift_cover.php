@@ -9,6 +9,7 @@ if(isset($_GET["approve"])) {
     $sr_request = get_shift_request($parts[2]);
     $sr_row = $sr_request->fetch_assoc();
     $swap_request = swap_shift($sr_row['shift_ref'], $sr_row['picker'] );
+    $delete_request = delete_shift_request($parts[2]);
 } else {
     $button = htmlspecialchars($_POST['shift']);
     $parts = explode(" ", $button);
