@@ -8,7 +8,6 @@
 </head>
 <body>
 <div id='calendar'></div>
-
 </div>
 </body>
 </html>
